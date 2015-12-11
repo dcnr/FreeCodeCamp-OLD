@@ -8,12 +8,20 @@
 
 
 function diff(arr1, arr2) {
-	var newArr = [];
-	// Same, same; but different.
-	return newArr;
-}
+	'use strict';
+	var newArray = Array.prototype.concat(...arguments)
+		.sort();
 
-diff([1, 2, 3, 5], [1, 2, 3, 4, 5]);
+	var result = [];
+	for (let i = 0; i < newArray.length; i++) {
+		if (newArray[i + 1] !== newArray[i])
+			result.push(newArray[i]);
+		else
+			i++;
+	}
+
+	return result;
+}
 
 
 /* exports */
