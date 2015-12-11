@@ -1,0 +1,56 @@
+// Accepted values:
+// basic = basic scripting algorithm tests
+// intermediate = intermediate scripting algorithm tests
+// all = both basic and intermediate
+var test_suite = "intermediate";
+
+
+/************************************************************************/
+var basic = "./bonfires/basic-algorithm-scripting/";
+var intermediate = "./bonfires/intermediate-algorithm-scripting/";
+
+var basic_suite = [
+	require(basic + "02-reverse-a-string-spec"),
+	require(basic + "03-factorialize-a-number-spec"),
+	require(basic + "04-check-for-palindromes-spec"),
+	require(basic + "05-find-the-longest-word-in-a-string-spec"),
+	require(basic + "06-title-case-a-sentence-spec"),
+	require(basic + "07-return-largest-numbers-in-arrays-spec"),
+	require(basic + "08-confirm-the-ending-spec"),
+	require(basic + "09-repeat-a-string-repeat-a-string-spec"),
+	require(basic + "10-truncate-a-string-spec"),
+	require(basic + "11-chunky-monkey-spec"),
+	require(basic + "12-slasher-flick-spec"),
+	require(basic + "13-mutations-spec"),
+	require(basic + "14-falsy-bouncer-spec"),
+	require(basic + "15-seek-and-destroy-spec"),
+	require(basic + "16-where-do-i-belong-spec")
+];
+
+var intermediate_suite = [
+	require(intermediate + "01-sum-all-numbers-in-a-range-spec"),
+	require(intermediate + "02-diff-two-arrays-spec")
+];
+
+var tests;
+switch (test_suite) {
+	case 'basic':
+		tests = basic_suite;
+		break;
+
+	case 'intermediate':
+		tests = intermediate_suite;
+		break;
+
+	case 'all':
+		tests = basic_suite.concat(intermediate_suite);
+		break;
+
+	default:
+		tests = basic_suite;
+}
+
+console.log(typeof intermediate_suite[1]);
+tests.forEach(
+	test => test()
+);

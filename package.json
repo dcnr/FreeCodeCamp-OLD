@@ -1,0 +1,29 @@
+{
+  "name": "freecodecamp",
+  "version": "1.0.0",
+  "description": "My Free Code Camp repository",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dcnr/FreeCodeCamp.git"
+  },
+  "keywords": [
+    "freecodecamp",
+    "javascript"
+  ],
+  "author": "Norman Dela Cruz",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dcnr/FreeCodeCamp/issues"
+  },
+  "homepage": "https://github.com/dcnr/FreeCodeCamp#readme",
+  "devDependencies": {
+    "chai": "^3.4.1"
+  }
+}
