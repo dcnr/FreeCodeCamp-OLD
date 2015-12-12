@@ -18,7 +18,16 @@ module.exports = function () {
 				});
 			});
 
-			it.skip("should convert given number to roman numeral", () => {
+			it("should return the string values in upper case", () => {
+				test_cases.forEach(test => {
+					var result = convert(test.input);
+
+					expect(result)
+						.to.be.match(/[A-Z]/);
+				});
+			});
+
+			it("should convert given number to roman numeral", () => {
 				test_cases.forEach(test => {
 					var result = convert(test.input);
 
