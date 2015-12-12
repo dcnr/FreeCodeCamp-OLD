@@ -33,7 +33,7 @@ var basic_suite = [
 var intermediate_suite = [
 	require(intermediate + "01-sum-all-numbers-in-a-range-spec"),
 	require(intermediate + "02-diff-two-arrays-spec"),
-	require(intermediate + "03-roman-numeral-converter")
+	require(intermediate + "03-roman-numeral-converter-spec")
 ];
 
 var tests;

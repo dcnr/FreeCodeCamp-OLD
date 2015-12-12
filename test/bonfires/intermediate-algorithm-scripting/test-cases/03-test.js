@@ -61,7 +61,7 @@ module.exports = [
 	},
 	{
 		"input": 891,
-		"expected": DCCCXCI
+		"expected": "DCCCXCI"
 	},
 	{
 		"input": 1000,

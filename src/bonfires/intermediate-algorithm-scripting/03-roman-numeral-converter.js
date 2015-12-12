@@ -7,5 +7,8 @@
  *
  */
 function convert(num) {
-	return num;
+	return "";
 }
+
+/* exports */
+module.exports = convert;
