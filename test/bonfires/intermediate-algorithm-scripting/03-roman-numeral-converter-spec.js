@@ -18,7 +18,7 @@ module.exports = function () {
 				});
 			});
 
-			it("should convert given number to roman numeral", () => {
+			it.skip("should convert given number to roman numeral", () => {
 				test_cases.forEach(test => {
 					var result = convert(test.input);
 
