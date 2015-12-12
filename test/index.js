@@ -2,10 +2,13 @@
 // basic = basic scripting algorithm tests
 // intermediate = intermediate scripting algorithm tests
 // all = both basic and intermediate
+
 var test_suite = "intermediate";
 
 
-/************************************************************************/
+
+
+/********************** DON'T MODIFY BELOW THIS ***************************/
 var basic = "./bonfires/basic-algorithm-scripting/";
 var intermediate = "./bonfires/intermediate-algorithm-scripting/";
 
@@ -29,7 +32,8 @@ var basic_suite = [
 
 var intermediate_suite = [
 	require(intermediate + "01-sum-all-numbers-in-a-range-spec"),
-	require(intermediate + "02-diff-two-arrays-spec")
+	require(intermediate + "02-diff-two-arrays-spec"),
+	require(intermediate + "03-roman-numeral-converter")
 ];
 
 var tests;
@@ -50,7 +54,7 @@ switch (test_suite) {
 		tests = basic_suite;
 }
 
-console.log(typeof intermediate_suite[1]);
+
 tests.forEach(
 	test => test()
 );
