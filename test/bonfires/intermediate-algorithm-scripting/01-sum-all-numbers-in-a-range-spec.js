@@ -5,25 +5,7 @@ module.exports = function () {
 	var sumAll = require("./intermediate-algo-collection")
 		.sumAll;
 
-	var tests = [
-		{
-			input: [1, 4],
-			expected: 10
-		},
-		{
-			input: [4, 1],
-			expected: 10
-		},
-		{
-			input: [5, 10],
-			expected: 45
-		},
-		{
-			input: [10, 5],
-			expected: 45
-		}
-	];
-
+	var tests = require("./test-cases/01-test.js");
 
 	describe("Sum all Numbers in a Range", () => {
 		describe("sumAll()", () => {
