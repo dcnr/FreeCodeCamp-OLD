@@ -35,7 +35,8 @@ var intermediate_suite = [
 	require(intermediate + "02-diff-two-arrays-spec"),
 	require(intermediate + "03-roman-numeral-converter-spec"),
 	require(intermediate + "04-where-art-thou-spec"),
-	require(intermediate + "05-search-and-replace-spec")
+	require(intermediate + "05-search-and-replace-spec"),
+	require(intermediate + "06-pig-latin-spec")
 ];
 
 var tests;
