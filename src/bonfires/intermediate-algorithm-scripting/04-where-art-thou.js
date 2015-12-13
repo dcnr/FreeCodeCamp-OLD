@@ -36,9 +36,25 @@
 
 
 function where(collection, source) {
-	var arr = [];
-	// What's in a name?
-	return arr;
+	'use strict';
+
+	function compare(obj) {
+		for (let prop in source) {
+			if (source.hasOwnProperty(prop)) {
+				if (!obj.hasOwnProperty(prop)) {
+					return false;
+				}
+				else {
+					if (obj[prop] !== source[prop])
+						return false;
+				}
+			}
+		}
+
+		return true;
+	}
+
+	return collection.filter(compare);
 }
 
 
