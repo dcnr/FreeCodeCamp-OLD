@@ -12,7 +12,9 @@
 
 
 function translate(str) {
-	return str;
+	var result = "";
+
+	return result;
 }
 
 
