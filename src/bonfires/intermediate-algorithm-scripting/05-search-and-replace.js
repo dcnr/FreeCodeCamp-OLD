@@ -19,5 +19,25 @@
 
 
 function myReplace(str, before, after) {
-	return str;
+	'use strict';
+
+	var result = "";
+
+	function checkCase(match) {
+		if (match.charAt(0) === match.charAt(0)
+			.toUpperCase()) {
+			let newCase = after.charAt(0)
+				.toUpperCase() + after.slice(1);
+
+			return newCase;
+		}
+
+		return after;
+	}
+
+	return str.replace(before, checkCase);
 }
+
+
+/* exports */
+module.exports = myReplace;
