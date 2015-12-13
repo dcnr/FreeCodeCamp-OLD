@@ -13,6 +13,18 @@
 
 function translate(str) {
 	var result = "";
+	var re = new RegExp("^([^aeiou]+)", "i");
+
+	if (re.test(str)) {
+		result = str.split(re)
+			.reverse()
+			.join("");
+
+		result += "ay";
+	}
+	else {
+		result = str + "way";
+	}
 
 	return result;
 }
