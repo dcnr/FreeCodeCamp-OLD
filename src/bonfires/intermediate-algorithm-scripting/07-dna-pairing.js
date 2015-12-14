@@ -19,7 +19,31 @@
 
 
 function pair(str) {
+	'use strict';
+
+	var pairs = {
+		"A": "T",
+		"C": "G",
+
+		getPair: function (base) {
+			for (let key in this) {
+				if (key === base) {
+					return this[key];
+				}
+
+				if (this[key] === base) {
+					return key;
+				}
+			}
+		} // end getPair
+	};
+
+
 	var result = [];
+	var sequence = str.split("");
+
+	result = sequence.map(base => [base, pairs.getPair(base)]);
+
 	return result;
 }
 

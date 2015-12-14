@@ -36,12 +36,12 @@ module.exports = function () {
 				});
 			});
 
-			it.only("should return DNA pairs", () => {
+			it("should return DNA pairs", () => {
 				tests.forEach(test => {
 					let result = pair(test.input);
 
 					expect(result)
-						.to.be.equal(test.expected);
+						.to.deep.include.members(test.expected);
 				});
 			});
 		});
