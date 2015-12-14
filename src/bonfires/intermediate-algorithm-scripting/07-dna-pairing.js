@@ -19,7 +19,8 @@
 
 
 function pair(str) {
-	return str;
+	var result = [];
+	return result;
 }
 
 
