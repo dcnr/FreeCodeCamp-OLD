@@ -8,9 +8,19 @@
 
 
 function spinalCase(str) {
-	// "It's such a fine line between stupid, and clever."
-	// --David St. Hubbins
-	return str;
+	'use strict';
+
+	var result = str;
+
+	if (~result.indexOf(" ") || ~result.indexOf("_")) {
+		result = result.replace(/[\s_]/g, "-");
+	}
+	else {
+		result = result.replace(/(.)([A-Z])/g, "$1-$2");
+	}
+
+	result = result.toLowerCase();
+	return result;
 }
 
 
