@@ -15,7 +15,14 @@ module.exports = function () {
 					let result = fearNotLetter(test.input);
 
 					expect(result)
-						.to.be.a("string");
+						.to.satisfy(result => {
+							if (typeof result === "string")
+								return true;
+
+							if (result === undefined)
+								return true;
+						});
+
 				});
 			});
 
