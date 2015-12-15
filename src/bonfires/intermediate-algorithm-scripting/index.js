@@ -7,7 +7,8 @@ var IntermediateAlgo = {
 	"translate": require("./06-pig-latin"),
 	"pair": require("./07-dna-pairing"),
 	"fearNotLetter": require("./08-missing-letters"),
-	"boo": require("./09-boo-who")
+	"boo": require("./09-boo-who"),
+	"unite": require("./10-sorted-union"),
 };
 
 module.exports = IntermediateAlgo;
