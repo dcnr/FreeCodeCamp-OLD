@@ -19,14 +19,24 @@ function unite(arr1, arr2, arr3) {
 	var result = [];
 	var set = Array.prototype.concat(...arguments);
 
-	for (let i = 0, len = set.length; i < len; ++i) {
-		while (~set.indexOf(set[i], i + 1)) {
-			let loc = set.indexOf(set[i], i + 1);
+	// for (let i = 0, len = set.length; i < len; ++i) {
+	// 	while (~set.indexOf(set[i], i + 1)) {
+	// 		let loc = set.indexOf(set[i], i + 1);
+	// 		delete set[loc];
+	// 	}
+	// }
+	//
+	// result = set.filter(v => v !== '');
+
+
+	result = set.filter((num, index) => {
+		while (~set.indexOf(num, index) && num !== undefined){
+			let loc = set.indexOf(num, index);
 			delete set[loc];
 		}
-	}
 
-	result = set.filter(v => v !== '');
+		return true;
+	});
 
 	return result;
 }
