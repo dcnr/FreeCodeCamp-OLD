@@ -39,7 +39,8 @@ var intermediate_suite = [
 	require(intermediate + "06-pig-latin-spec"),
 	require(intermediate + "07-dna-pairing-spec"),
 	require(intermediate + "08-missing-letters-spec"),
-	require(intermediate + "09-boo-who-spec")
+	require(intermediate + "09-boo-who-spec"),
+	require(intermediate + "10-sorted-union"),
 ];
 
 var tests;
