@@ -9,6 +9,7 @@ var IntermediateAlgo = {
 	"fearNotLetter": require("./08-missing-letters"),
 	"boo": require("./09-boo-who"),
 	"unite": require("./10-sorted-union"),
+	"convertHTML": require("./11-convert-html-entities"),
 };
 
 module.exports = IntermediateAlgo;
