@@ -12,3 +12,7 @@ function spinalCase(str) {
 	// --David St. Hubbins
 	return str;
 }
+
+
+/* exports */
+module.exports = spinalCase;
