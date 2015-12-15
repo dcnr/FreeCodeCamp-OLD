@@ -40,7 +40,7 @@ var intermediate_suite = [
 	require(intermediate + "07-dna-pairing-spec"),
 	require(intermediate + "08-missing-letters-spec"),
 	require(intermediate + "09-boo-who-spec"),
-	require(intermediate + "10-sorted-union"),
+	require(intermediate + "10-sorted-union-spec"),
 ];
 
 var tests;
