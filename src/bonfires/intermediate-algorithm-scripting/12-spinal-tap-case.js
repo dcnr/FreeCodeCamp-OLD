@@ -11,15 +11,19 @@ function spinalCase(str) {
 	'use strict';
 
 	var result = str;
+	var re_spaces = new RegExp(/[\s_]/g);
+	var re_nospaces = new RegExp(/(.)([A-Z])/g);
 
 	if (~result.indexOf(" ") || ~result.indexOf("_")) {
-		result = result.replace(/[\s_]/g, "-");
+		result = result.replace(re_spaces, "-");
 	}
 	else {
-		result = result.replace(/(.)([A-Z])/g, "$1-$2");
+		result = result.replace(re_nospaces, "$1-$2");
 	}
 
 	result = result.toLowerCase();
+
+
 	return result;
 }
 
