@@ -9,19 +9,19 @@ module.exports = [
 	},
 	{
 		"input": "Sixty > twelve",
-		"expected": "Sixty &​gt; twelve"
+		"expected": "Sixty &gt; twelve"
 	},
 	{
 		"input": 'Stuff in "quotation marks"',
-		"expected": "Stuff in &​quot;quotation marks&​quot;"
+		"expected": "Stuff in &quot;quotation marks&quot;"
 	},
 	{
 		"input": "Shindler's List",
-		"expected": "Shindler&​apos;s List"
+		"expected": "Shindler&apos;s List"
 	},
 	{
 		"input": "<>",
-		"expected": "&lt;&gt"
+		"expected": "&lt;&gt;"
 	},
 	{
 		"input": "abc",

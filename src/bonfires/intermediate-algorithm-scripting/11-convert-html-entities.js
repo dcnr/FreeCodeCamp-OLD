@@ -10,8 +10,19 @@
 
 function convert(str) {
 	'use strict';
-	// &colon;&rpar;
-	return str;
+
+	const ENTITIES = {
+		"&" : "&amp;",
+		"<" : "&lt;",
+		">" : "&gt;",
+		'"' : "&quot;",
+		"'" : "&apos;"
+	};
+
+	var pattern = new RegExp("[&<>\"']", "g");
+	var result = str.replace(pattern, (match) => ENTITIES[match]);
+
+	return result;
 }
 
 
