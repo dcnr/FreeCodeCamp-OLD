@@ -20,7 +20,7 @@ module.exports = function () {
 				});
 			});
 
-			it("should check if input is a boolean primitie", () => {
+			it("should check if input is a boolean primitive", () => {
 				tests.forEach(test => {
 					let result = boo(test.input);
 
