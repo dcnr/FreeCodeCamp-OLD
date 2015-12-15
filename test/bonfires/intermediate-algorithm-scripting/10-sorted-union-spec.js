@@ -26,7 +26,7 @@ module.exports = function () {
 						let result = unite(...test.input);
 
 						expect(result)
-							.to.equal(test.expected);
+							.to.deep.equal(test.expected);
 					});
 				});
 		});

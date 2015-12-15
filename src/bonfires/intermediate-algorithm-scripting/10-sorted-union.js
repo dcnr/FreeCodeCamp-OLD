@@ -16,6 +16,7 @@
 function unite(arr1, arr2, arr3) {
 	'use strict';
 
+	var result = [];
 	var set = Array.prototype.concat(...arguments);
 
 	for (let i = 0, len = set.length; i < len; ++i) {
@@ -25,11 +26,11 @@ function unite(arr1, arr2, arr3) {
 		}
 	}
 
-	return set;
+	result = set.filter(v => v !== '');
+
+	return result;
 }
 
-console.log(unite([1, 3, 2], [1, [5]], [2, [4]]));
-console.log("should be:", [1, 3, 2, [5], [4]]);
 
 /* exports */
 module.exports = unite;
