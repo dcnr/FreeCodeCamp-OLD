@@ -42,6 +42,7 @@ var intermediate_suite = [
 	require(intermediate + "09-boo-who-spec"),
 	require(intermediate + "10-sorted-union-spec"),
 	require(intermediate + "11-convert-html-entities-spec"),
+	require(intermediate + "12-spinal-tap-case-spec"),
 ];
 
 var tests;

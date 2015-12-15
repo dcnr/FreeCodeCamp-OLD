@@ -10,6 +10,7 @@ var IntermediateAlgo = {
 	"boo": require("./09-boo-who"),
 	"unite": require("./10-sorted-union"),
 	"convertHTML": require("./11-convert-html-entities"),
+	"spinalCase": require("./12-spinal-tap-case"),
 };
 
 module.exports = IntermediateAlgo;
