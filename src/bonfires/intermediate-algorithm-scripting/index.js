@@ -6,7 +6,8 @@ var IntermediateAlgo = {
 	"myReplace": require("./05-search-and-replace"),
 	"translate": require("./06-pig-latin"),
 	"pair": require("./07-dna-pairing"),
-	"fearNotLetter": require("./08-missing-letters")
+	"fearNotLetter": require("./08-missing-letters"),
+	"boo": require("./09-boo-who")
 };
 
 module.exports = IntermediateAlgo;
