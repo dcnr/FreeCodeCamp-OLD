@@ -20,7 +20,7 @@ module.exports = function () {
 				});
 			});
 
-			it("should return all unique values in their original" +
+			it("should return all unique values in their original " +
 				"order", () => {
 					tests.forEach(test => {
 						let result = unite(...test.input);
