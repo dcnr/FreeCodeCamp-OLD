@@ -11,6 +11,7 @@ var IntermediateAlgo = {
 	"unite": require("./10-sorted-union"),
 	"convertHTML": require("./11-convert-html-entities"),
 	"spinalCase": require("./12-spinal-tap-case"),
+	"sumFibs": require("./13-sum-all-odd-fibonacci-numbers"),
 };
 
 module.exports = IntermediateAlgo;
