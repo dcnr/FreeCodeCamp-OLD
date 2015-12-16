@@ -12,6 +12,7 @@ var IntermediateAlgo = {
 	"convertHTML": require("./11-convert-html-entities"),
 	"spinalCase": require("./12-spinal-tap-case"),
 	"sumFibs": require("./13-sum-all-odd-fibonacci-numbers"),
+	"sumPrimes": require("./14-sum-all-primes"),
 };
 
 module.exports = IntermediateAlgo;
