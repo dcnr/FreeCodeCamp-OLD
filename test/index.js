@@ -43,6 +43,7 @@ var intermediate_suite = [
 	require(intermediate + "10-sorted-union-spec"),
 	require(intermediate + "11-convert-html-entities-spec"),
 	require(intermediate + "12-spinal-tap-case-spec"),
+	require(intermediate + "13-sum-all-odd-fibonacci-numbers-spec"),
 ];
 
 var tests;
