@@ -13,10 +13,19 @@ module.exports = function () {
 		describe("sumFibs()", () => {
 			it("should return a number", () => {
 				tests.forEach(test => {
-					let result = sumFibs(...test.input);
+					let result = sumFibs(test.input);
 
 					expect(result)
 						.to.be.a("number");
+				});
+			});
+
+			it("should sum odd Fibonacci numbers up to given input", () => {
+				tests.forEach(test => {
+					let result = sumFibs(test.input);
+
+					expect(result)
+						.to.equal(test.expected);
 				});
 			});
 		});
