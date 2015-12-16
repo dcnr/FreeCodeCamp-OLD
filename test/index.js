@@ -3,7 +3,7 @@
 // intermediate = intermediate scripting algorithm tests
 // all = both basic and intermediate
 
-var test_suite = "intermediate";
+var test_suite = "all";
 
 
 
