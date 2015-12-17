@@ -11,12 +11,15 @@ module.exports = function () {
 
 	describe("Finders Keepers", () => {
 		describe("find()", () => {
-			it("should return a number", () => {
+			it("should return a number or undefined", () => {
 				tests.forEach(test => {
 					let result = find(...test.input);
 
 					expect(result)
-						.to.be.a("number");
+						.to.satisfy(result => {
+							if (typeof result === "number" || result === undefined)
+								return true;
+						});
 				});
 			});
 
