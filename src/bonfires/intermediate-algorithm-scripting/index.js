@@ -15,6 +15,7 @@ var IntermediateAlgo = {
 	"sumPrimes": require("./14-sum-all-primes"),
 	"smallestCommons": require("./15-smallest-common-multiple"),
 	"find": require("./16-finders-keepers"),
+	"drop": require("./17-drop-it"),
 };
 
 module.exports = IntermediateAlgo;
