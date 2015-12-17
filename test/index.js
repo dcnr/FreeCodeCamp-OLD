@@ -44,6 +44,7 @@ var intermediate_suite = [
 	require(intermediate + "11-convert-html-entities-spec"),
 	require(intermediate + "12-spinal-tap-case-spec"),
 	require(intermediate + "13-sum-all-odd-fibonacci-numbers-spec"),
+	require(intermediate + "14-sum-all-primes-spec"),
 ];
 
 var tests;
