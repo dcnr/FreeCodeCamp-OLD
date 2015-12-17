@@ -29,24 +29,30 @@ function smallestCommons(arr) {
 	}
 
 	function gcd(a, b) {
-		let result = 0;
-		let r = 1, tmp = 1;
-
-		while (true) {
-			tmp = r;
-			r = b % a;
-
-			if (r === 0) {
-				result = tmp;
-				break;
-			}
-			else {
-				b = a;
-				a = r;
-			}
+		function step(x, y) {
+			return y % x;
 		}
 
-		return result;
+		if (a > b) {
+			let tmp = b;
+			b = a;
+			a = tmp;
+		}
+
+		var r = a;
+		while (true) {
+			if (step(a, b) === 0) {
+				return r;
+			}
+
+			r = step(a, b);
+			b = a;
+			a = r;
+		}
+	}
+
+	function lcm(a, b) {
+		return a / gcd(a, b) * b;
 	}
 	/**************************************************/
 
@@ -54,14 +60,14 @@ function smallestCommons(arr) {
 	arr.sort((a, b) => a - b);
 
 	var result = 0;
-	//var range = makeRange(arr);
+	var range = makeRange(arr);
 
-	result = gcd(...arr);
+	result = range.reduce((p, c) => lcm(p, c));
+
 
 	return result;
 }
 
-console.log(smallestCommons([125, 350]));
 
 /* exports */
 module.exports = smallestCommons;
