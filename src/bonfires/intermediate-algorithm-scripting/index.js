@@ -13,7 +13,8 @@ var IntermediateAlgo = {
 	"spinalCase": require("./12-spinal-tap-case"),
 	"sumFibs": require("./13-sum-all-odd-fibonacci-numbers"),
 	"sumPrimes": require("./14-sum-all-primes"),
-	"smallestCommons": require("./15-smalles-common-multiple"),
+	"smallestCommons": require("./15-smallest-common-multiple"),
+	"find": require("./16-finders-keepers"),
 };
 
 module.exports = IntermediateAlgo;
