@@ -15,9 +15,53 @@
 
 
 function smallestCommons(arr) {
-	return arr;
+	'use strict';
+
+	/********************* HELPERS ********************/
+	function makeRange(a) {
+		let range = [];
+
+		for (let step = a[0], max = a[1]; step <= max; ++step) {
+			range.push(step);
+		}
+
+		return range;
+	}
+
+	function gcd(a, b) {
+		let result = 0;
+		let r = 1, tmp = 1;
+
+		while (true) {
+			tmp = r;
+			r = b % a;
+
+			if (r === 0) {
+				result = tmp;
+				break;
+			}
+			else {
+				b = a;
+				a = r;
+			}
+		}
+
+		return result;
+	}
+	/**************************************************/
+
+
+	arr.sort((a, b) => a - b);
+
+	var result = 0;
+	//var range = makeRange(arr);
+
+	result = gcd(...arr);
+
+	return result;
 }
 
+console.log(smallestCommons([125, 350]));
 
 /* exports */
 module.exports = smallestCommons;
