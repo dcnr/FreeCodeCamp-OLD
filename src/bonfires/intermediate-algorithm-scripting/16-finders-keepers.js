@@ -12,3 +12,7 @@ function find(arr, func) {
 	var num = 0;
 	return num;
 }
+
+
+/* exports */
+module.exports = find;
