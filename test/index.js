@@ -46,6 +46,7 @@ var intermediate_suite = [
 	require(intermediate + "13-sum-all-odd-fibonacci-numbers-spec"),
 	require(intermediate + "14-sum-all-primes-spec"),
 	require(intermediate + "15-smallest-common-multiple-spec"),
+	require(intermediate + "16-finders-keepers-spec"),
 ];
 
 var tests;

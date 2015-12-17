@@ -14,6 +14,7 @@ var IntermediateAlgo = {
 	"sumFibs": require("./13-sum-all-odd-fibonacci-numbers"),
 	"sumPrimes": require("./14-sum-all-primes"),
 	"smallestCommons": require("./15-smallest-common-multiple"),
+	"find": require("./16-finders-keepers"),
 };
 
 module.exports = IntermediateAlgo;
