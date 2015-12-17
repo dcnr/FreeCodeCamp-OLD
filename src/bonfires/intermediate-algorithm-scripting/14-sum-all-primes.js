@@ -13,9 +13,36 @@
 
 
 function sumPrimes(num) {
-	return num;
+	'use strict';
+
+	function checkPrime(n) {
+		//
+		// IN THIS FUNCTION:
+		// HORRIBLE TRIAL DIVISION
+		//
+
+		let max = Math.sqrt(n);
+
+		for (let i = 2; i <= max; ++i) {
+			let x = n / i;
+
+			if (parseInt(x, 10) === x)
+				return false;
+		}
+
+		return true;
+	}
+
+	var result = 0;
+
+	for (let i = 2; i <= num; ++i) {
+		if (checkPrime(i))
+			result += i;
+	}
+
+	return result;
 }
 
 
 /* exports */
-module.exports	= sumPrimes;
+module.exports = sumPrimes;

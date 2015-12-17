@@ -6,5 +6,5 @@ module.exports = [
 	{
 		"input": 977,
 		"expected": 73156
-	},
+	}
 ];
