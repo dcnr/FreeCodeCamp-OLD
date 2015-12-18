@@ -48,6 +48,7 @@ var intermediate_suite = [
 	require(intermediate + "15-smallest-common-multiple-spec"),
 	require(intermediate + "16-finders-keepers-spec"),
 	require(intermediate + "17-drop-it-spec"),
+	require(intermediate + "18-steamroller-spec"),
 ];
 
 var tests;
