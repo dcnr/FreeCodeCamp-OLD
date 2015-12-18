@@ -9,7 +9,14 @@
 
 
 function binaryAgent(str) {
-	return str;
+
+	return str.split(" ")
+		.map(v =>
+			String.fromCharCode(
+				parseInt(v, 2)
+			)
+		)
+		.join("");
 }
 
 
