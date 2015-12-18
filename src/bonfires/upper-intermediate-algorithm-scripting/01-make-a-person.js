@@ -21,9 +21,12 @@
  */
 
 
-var Person = function (firstAndLast) {
-	return firstAndLast;
-};
+function Person(firstAndLast) {
+	const first_last = firstAndLast.split(" ");
 
-var bob = new Person('Bob Ross');
-bob.getFullName();
+	this._first = first_last[0];
+	this._last = first_last[1];
+}
+
+
+module.exports = Person;
