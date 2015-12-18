@@ -9,14 +9,9 @@
 function steamroller(arr) {
 	'use strict';
 
-	// function process(v) {
-	//
-	// }
-
-	var clone = arr.slice(0);
 	var result = [];
 
-	clone.forEach(v => {
+	arr.forEach(v => {
 
 		if (v instanceof Array) {
 			let tmp;
@@ -42,9 +37,6 @@ function steamroller(arr) {
 		}
 	});
 
-	// for (let i = 0, len = clone.length; i < len; ++i) {
-	//
-	// }
 
 	return result;
 }
