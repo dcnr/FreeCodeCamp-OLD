@@ -49,6 +49,7 @@ var intermediate_suite = [
 	require(intermediate + "16-finders-keepers-spec"),
 	require(intermediate + "17-drop-it-spec"),
 	require(intermediate + "18-steamroller-spec"),
+	require(intermediate + "19-binary-agents-spec"),
 ];
 
 var tests;
