@@ -18,7 +18,7 @@ var IntermediateAlgo = {
 	"drop": require("./17-drop-it"),
 	"steamroller": require("./18-steamroller"),
 	"binaryAgent": require("./19-binary-agents"),
-	"every": requrie("./20-everything-be-true"),
+	"every": require("./20-everything-be-true"),
 };
 
 module.exports = IntermediateAlgo;

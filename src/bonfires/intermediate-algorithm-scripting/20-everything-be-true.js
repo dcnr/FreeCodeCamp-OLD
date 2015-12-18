@@ -8,8 +8,9 @@
 
 
 function every(collection, pre) {
-	// Is everyone being true?
-	return pre;
+	var result = true;
+
+	return result;
 }
 
 
