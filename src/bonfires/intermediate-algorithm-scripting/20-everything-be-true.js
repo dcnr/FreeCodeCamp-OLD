@@ -10,6 +10,14 @@
 function every(collection, pre) {
 	var result = true;
 
+	result = collection.every(v => {
+		if (v.hasOwnProperty(pre)) {
+			return Boolean(v[pre]);
+		}
+
+		return false;
+	});
+
 	return result;
 }
 
