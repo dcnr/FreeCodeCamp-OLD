@@ -19,6 +19,7 @@ var IntermediateAlgo = {
 	"steamroller": require("./18-steamroller"),
 	"binaryAgent": require("./19-binary-agents"),
 	"every": require("./20-everything-be-true"),
+	"add": require("./21-arguments-optional")
 };
 
 module.exports = IntermediateAlgo;

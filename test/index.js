@@ -51,6 +51,7 @@ var intermediate_suite = [
 	require(intermediate + "18-steamroller-spec"),
 	require(intermediate + "19-binary-agents-spec"),
 	require(intermediate + "20-everything-be-true-spec"),
+	require(intermediate + "21-arguments-optional-spec")
 ];
 
 var tests;
