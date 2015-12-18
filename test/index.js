@@ -1,9 +1,10 @@
 // Accepted values:
 // basic = basic scripting algorithm tests
 // intermediate = intermediate scripting algorithm tests
+// upper = upper intermediate scripting algorithm tests
 // all = both basic and intermediate
 
-var test_suite = "all";
+var test_suite = "upper";
 
 
 
@@ -11,6 +12,7 @@ var test_suite = "all";
 /********************** DON'T MODIFY BELOW THIS ***************************/
 var basic = "./bonfires/basic-algorithm-scripting/";
 var intermediate = "./bonfires/intermediate-algorithm-scripting/";
+var upper = "./bonfires/upper-intermediate-algorithm-scripting/";
 
 var basic_suite = [
 	require(basic + "02-reverse-a-string-spec"),
@@ -54,6 +56,10 @@ var intermediate_suite = [
 	require(intermediate + "21-arguments-optional-spec")
 ];
 
+var upper_suite = [
+	require(upper + "01-make-a-person-spec"),
+];
+
 var tests;
 switch (test_suite) {
 	case 'basic':
@@ -62,6 +68,10 @@ switch (test_suite) {
 
 	case 'intermediate':
 		tests = intermediate_suite;
+		break;
+
+	case 'upper':
+		tests = upper_suite;
 		break;
 
 	case 'all':
