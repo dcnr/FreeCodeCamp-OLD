@@ -17,6 +17,7 @@ var IntermediateAlgo = {
 	"find": require("./16-finders-keepers"),
 	"drop": require("./17-drop-it"),
 	"steamroller": require("./18-steamroller"),
+	"binaryAgent": require("./19-binary-agents"),
 };
 
 module.exports = IntermediateAlgo;
