@@ -11,20 +11,14 @@ module.exports = function () {
 
 	describe("Steamroller", () => {
 		describe("steamroller()", () => {
-			//
-			// COMMENTING OUT BECAUSE MY steamroller() is
-			// DESCTRUCTIVE AND IT MUTATES TEST.INPUT
-			//
-			// it("should return an array", () => {
-			// 	tests.forEach(test => {
-			// 		let result = steamroller(test.input);
-			//
-			// 		expect(result)
-			// 			.to.be.an("array");
-			//
-			// 			console.log("test.input now:", test.input);
-			// 	});
-			// });
+			it("should return an array", () => {
+				tests.forEach(test => {
+					let result = steamroller(test.input);
+
+					expect(result)
+						.to.be.an("array");
+				});
+			});
 
 			it("should return a flattened array, removing any nesting", () => {
 				tests.forEach(test => {
@@ -32,10 +26,6 @@ module.exports = function () {
 
 					expect(result)
 						.to.deep.equal(test.expected);
-
-					expect(result)
-						.to.be.an("array");
-
 				});
 			});
 		});

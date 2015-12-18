@@ -10,8 +10,9 @@ function steamroller(arr) {
 	'use strict';
 
 	var result = [];
+	var clone = JSON.parse(JSON.stringify(arr));
 
-	arr.forEach(v => {
+	clone.forEach(v => {
 
 		if (v instanceof Array) {
 			let tmp;
