@@ -16,6 +16,7 @@ var IntermediateAlgo = {
 	"smallestCommons": require("./15-smallest-common-multiple"),
 	"find": require("./16-finders-keepers"),
 	"drop": require("./17-drop-it"),
+	"steamroller": require("./18-steamroller"),
 };
 
 module.exports = IntermediateAlgo;
