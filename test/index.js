@@ -50,6 +50,7 @@ var intermediate_suite = [
 	require(intermediate + "17-drop-it-spec"),
 	require(intermediate + "18-steamroller-spec"),
 	require(intermediate + "19-binary-agents-spec"),
+	require(intermediate + "20-everything-be-true-spec"),
 ];
 
 var tests;
