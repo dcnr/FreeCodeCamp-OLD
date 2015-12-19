@@ -27,7 +27,7 @@ module.exports = function () {
 		{
 			"input": [[], 100],
 			"expected": 0
-		}
+		},
 	];
 
 	describe("Pairwise", () => {
@@ -35,8 +35,23 @@ module.exports = function () {
 			it("should return a number", () => {
 				tests.forEach(test => {
 					const result = pairwise(...test.input);
+
+					expect(result)
+						.to.be.a("number");
 				});
 			});
+
+			it("should return the sum of all indices where the values" +
+				"equal the target argument", () => {
+					tests.forEach(test => {
+						const result = pairwise(...test.input);
+
+						console.log(result);
+						expect(result)
+							.to.equal(test.expected);
+					});
+				});
+
 		});
 	});
 };
