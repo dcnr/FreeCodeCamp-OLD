@@ -4,7 +4,7 @@ module.exports = function () {
 	const expect = require("chai")
 		.expect;
 
-	const pairwise = require("./intermediate-algo-collection")
+	const pairwise = require("./upper-algo-collection")
 		.pairwise;
 
 	const tests = [
@@ -33,8 +33,9 @@ module.exports = function () {
 	describe("Pairwise", () => {
 		describe("pairwise()", () => {
 			it("should return a number", () => {
-
-
+				tests.forEach(test => {
+					const result = pairwise(...test.input);
+				});
 			});
 		});
 	});
