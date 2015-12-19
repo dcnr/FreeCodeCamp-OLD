@@ -58,6 +58,7 @@ var intermediate_suite = [
 
 var upper_suite = [
 	require(upper + "01-make-a-person-spec"),
+	require(upper + "02-map-the-debris-spec"),
 ];
 
 var tests;
