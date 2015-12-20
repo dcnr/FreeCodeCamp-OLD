@@ -21,7 +21,7 @@ module.exports = function () {
 			"expected": 1
 		},
 		{
-			"input": [[0, 0, 0, 0, 1, 1], 1],
+			"input": [[0, 0, 0, 0, 1, 1], 1], // [ 0, 4, 1, 5]
 			"expected": 10
 		},
 		{
@@ -46,7 +46,6 @@ module.exports = function () {
 					tests.forEach(test => {
 						const result = pairwise(...test.input);
 
-						console.log(result);
 						expect(result)
 							.to.equal(test.expected);
 					});

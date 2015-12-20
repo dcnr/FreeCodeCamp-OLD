@@ -20,38 +20,38 @@
 function pairwise(arr, arg) {
 	'use strict';
 
-	if (!arr.length)
-	return 0;
+	function checkPair(current_value, current_index) {
+		for (let i = current_index + 1; i < array_length; ++i) {
+			const paired_value = arr[i];
+			const paired_index = i;
 
-	let result = [];
-
-	for (let i = 0, len = arr.length; i < len - 1; ++i) {
-		if (~result.indexOf(i))
-			continue;
-
-			let cv = arr[i];
-			let tmp = [];
-			for (let j = i + 1; j < len; ++j) {
-				if (~result.indexOf(j))
-					continue;
-
-					let pv = arr[j];
-
-					if(cv + pv === arg) {
-						if (!~result.indexOf(cv))
-							result.push(i);
-
-						tmp.push(j);
-					}
+			if (current_value + paired_value === arg) {
+				indices.push(current_index, paired_index);
+				delete arr[current_index];
+				delete arr[paired_index];
+				break;
 			}
-			tmp.sort((a, b) => a - b);
-			if (tmp.length)
-				result.push(tmp[0]);
+		}
 	}
 
-	if (result.length)
-		result = result.reduce((a, b) => a + b);
 
+	arr = arr.slice();
+	const array_length = arr.length;
+
+	if (!array_length) {
+		return 0;
+	}
+
+	let indices = [];
+
+	for (let i = 0; i < array_length; ++i) {
+		const current_value = arr[i];
+		const current_index = i;
+
+		checkPair(current_value, current_index);
+	}
+
+	const result = indices.reduce((a, b) => a + b);
 	return result;
 }
 
