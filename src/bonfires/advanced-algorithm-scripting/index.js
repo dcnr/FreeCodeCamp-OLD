@@ -1,5 +1,5 @@
 const AdvancedAlgo = {
-	"telephoneCheck": require("./01-validate-telephone-numbers"),
+	"telephoneCheck": require("./01-validate-us-telephone-numbers"),
 };
 
 module.exports = AdvancedAlgo;
