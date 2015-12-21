@@ -2,7 +2,8 @@
  * Bonfire: Confirm the Ending
  * http://www.freecodecamp.com/challenges/bonfire-confirm-the-ending
  *
- * Check if a string (first argument) ends with the given target string (second argument).
+ * Check if a string (first argument) ends with the given target string
+ * (second argument).
  *
  */
 
