@@ -70,6 +70,7 @@
 
 	const advanced_suite = [
 		require(advanced + "01-validate-us-telephone-numbers-spec"),
+		require(advanced + "02-symmetric-difference-spec"),
 	];
 
 
