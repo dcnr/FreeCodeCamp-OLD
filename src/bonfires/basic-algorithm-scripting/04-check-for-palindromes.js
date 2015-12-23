@@ -18,12 +18,12 @@
 
 
 function palindrome(str) {
-	return str.replace(/[_\W]/g, '')
-		.toLowerCase() === str.replace(/[_\W]/g, '')
-		.split('')
-		.reverse()
-		.join('')
-		.toLowerCase();
+  return str.replace(/[_\W]/g, '')
+    .toLowerCase() === str.replace(/[_\W]/g, '')
+    .split('')
+    .reverse()
+    .join('')
+    .toLowerCase();
 }
 
 

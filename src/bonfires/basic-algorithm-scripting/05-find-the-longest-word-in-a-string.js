@@ -10,14 +10,14 @@
 
 
 function findLongestWord(str) {
-	var longestWord = 0;
+  var longestWord = 0;
 
-	str.split(' ').forEach(cv => {
-		if (cv.length > longestWord)
-			longestWord = cv.length;
-	});
+  str.split(' ').forEach(cv => {
+    if (cv.length > longestWord)
+      longestWord = cv.length;
+  });
 
-	return longestWord;
+  return longestWord;
 }
 
 

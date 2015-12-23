@@ -11,18 +11,18 @@
 
 
 function destroyer(arr) {
-	// reassign to args because arguments object is unique
-	// for each function?
-	var args = arguments;
+  // reassign to args because arguments object is unique
+  // for each function?
+  var args = arguments;
 
-	return arr.filter(val => {
-		for (var i = 1; i < args.length; i++) {
-			if (val === args[i])
-				return false;
-		}
+  return arr.filter(val => {
+    for (var i = 1; i < args.length; i++) {
+      if (val === args[i])
+        return false;
+    }
 
-		return true;
-	});
+    return true;
+  });
 }
 
 

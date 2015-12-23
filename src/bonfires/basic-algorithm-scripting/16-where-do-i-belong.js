@@ -16,7 +16,7 @@
 
 
 function where(arr, num) {
-	return arr.filter(v => v < num).length;
+  return arr.filter(v => v < num).length;
 }
 
 

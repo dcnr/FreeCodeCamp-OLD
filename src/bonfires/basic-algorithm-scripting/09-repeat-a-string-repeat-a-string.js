@@ -9,16 +9,16 @@
 
 
 function repeat(str, num) {
-	if (num < 0)
-		return "";
+  if (num < 0)
+    return "";
 
-	var result = '';
+  var result = '';
 
-	while (num--) {
-		result += str;
-	}
+  while (num--) {
+    result += str;
+  }
 
-	return result;
+  return result;
 }
 
 

@@ -11,7 +11,7 @@
 
 
 function slasher(arr, howMany) {
-	return arr.slice(howMany);
+  return arr.slice(howMany);
 }
 
 
