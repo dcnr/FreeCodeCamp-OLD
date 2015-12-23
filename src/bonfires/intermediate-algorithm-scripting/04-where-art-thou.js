@@ -10,23 +10,23 @@
  * For example, if the first argument is
  *
  * [{
- *		first: "Romeo",
- *		last: "Montague"
- *	},
- *	{
- *		first: "Mercutio",
- *		last: null
- *	},
+ *    first: "Romeo",
+ *    last: "Montague"
+ *  },
+ *  {
+ *    first: "Mercutio",
+ *    last: null
+ *  },
  * {
- *		first: "Tybalt",
- *		last: "Capulet"
- *	}],
+ *    first: "Tybalt",
+ *    last: "Capulet"
+ *  }],
  *
  * and the second argument is
  *
- 	{
-		last: "Capulet"
-	}
+ * {
+ * last: "Capulet"
+ * }
  *
  * then you must return the third object from the array(the first argument),
  * because it contains the property and it 's value, that was passed on as
@@ -36,25 +36,25 @@
 
 
 function where(collection, source) {
-	'use strict';
+  'use strict';
 
-	function compare(obj) {
-		for (let prop in source) {
-			if (source.hasOwnProperty(prop)) {
-				if (!obj.hasOwnProperty(prop)) {
-					return false;
-				}
-				else {
-					if (obj[prop] !== source[prop])
-						return false;
-				}
-			}
-		}
+  function compare(obj) {
+    for (let prop in source) {
+      if (source.hasOwnProperty(prop)) {
+        if (!obj.hasOwnProperty(prop)) {
+          return false;
+        }
+        else {
+          if (obj[prop] !== source[prop])
+            return false;
+        }
+      }
+    }
 
-		return true;
-	}
+    return true;
+  }
 
-	return collection.filter(compare);
+  return collection.filter(compare);
 }
 
 

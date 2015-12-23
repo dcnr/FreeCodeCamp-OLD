@@ -8,19 +8,19 @@
 
 
 function diff(arr1, arr2) {
-	'use strict';
-	var newArray = Array.prototype.concat(...arguments)
-		.sort();
+  'use strict';
+  var newArray = Array.prototype.concat(...arguments)
+    .sort();
 
-	var result = [];
-	for (let i = 0; i < newArray.length; i++) {
-		if (newArray[i + 1] !== newArray[i])
-			result.push(newArray[i]);
-		else
-			i++;
-	}
+  var result = [];
+  for (let i = 0; i < newArray.length; i++) {
+    if (newArray[i + 1] !== newArray[i])
+      result.push(newArray[i]);
+    else
+      i++;
+  }
 
-	return result;
+  return result;
 }
 
 

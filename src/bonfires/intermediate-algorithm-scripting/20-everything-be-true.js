@@ -8,17 +8,17 @@
 
 
 function every(collection, pre) {
-	var result = true;
+  var result = true;
 
-	result = collection.every(v => {
-		if (v.hasOwnProperty(pre)) {
-			return Boolean(v[pre]);
-		}
+  result = collection.every(v => {
+    if (v.hasOwnProperty(pre)) {
+      return Boolean(v[pre]);
+    }
 
-		return false;
-	});
+    return false;
+  });
 
-	return result;
+  return result;
 }
 
 

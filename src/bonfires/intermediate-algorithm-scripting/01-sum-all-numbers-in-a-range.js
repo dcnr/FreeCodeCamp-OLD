@@ -11,17 +11,17 @@
 
 
 function sumAll(arr) {
-	var input = arr.slice(0);
+  var input = arr.slice(0);
 
-	input.sort((a, b) => a - b);
-	var result = input[0];
+  input.sort((a, b) => a - b);
+  var result = input[0];
 
-	while (input[1] > input[0]) {
-		result += input[1];
-		input[1]--;
-	}
+  while (input[1] > input[0]) {
+    result += input[1];
+    input[1]--;
+  }
 
-	return result;
+  return result;
 }
 
 /* exports */

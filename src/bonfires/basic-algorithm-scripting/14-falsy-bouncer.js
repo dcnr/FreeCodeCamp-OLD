@@ -10,9 +10,9 @@
 
 
 function bouncer(arr) {
-	return arr.filter(
-		val => Boolean(val)
-	);
+  return arr.filter(
+    val => Boolean(val)
+  );
 }
 
 

@@ -9,33 +9,33 @@
 
 
 function convert(num) {
-	'use strict';
+  'use strict';
 
-	if (num === 0)
-		return "nulla";
+  if (num === 0)
+    return "nulla";
 
-	if (num >= 4000)
-		return `Sorry, currently the converter
-			cannot deal with that number range.`;
+  if (num >= 4000)
+    return `Sorry, currently the converter
+      cannot deal with that number range.`;
 
-	var roman_numerals = [
-		["", "M", "MM", "MMM"],
-		["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"],
-		["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],
-		["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
-	];
+  var roman_numerals = [
+    ["", "M", "MM", "MMM"],
+    ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"],
+    ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"],
+    ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+  ];
 
-	var digits = num.toString();
-	while (digits.length < 4) {
-		digits = "0" + digits;
-	}
+  var digits = num.toString();
+  while (digits.length < 4) {
+    digits = "0" + digits;
+  }
 
-	var converted_numeral = digits.split("")
-		.map(digit => parseInt(digit))
-		.map((digit, index) => roman_numerals[index][digit])
-		.join("");
+  var converted_numeral = digits.split("")
+    .map(digit => parseInt(digit))
+    .map((digit, index) => roman_numerals[index][digit])
+    .join("");
 
-	return converted_numeral;
+  return converted_numeral;
 }
 
 

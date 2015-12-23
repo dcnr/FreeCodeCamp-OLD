@@ -15,57 +15,57 @@
 
 
 function smallestCommons(arr) {
-	'use strict';
+  'use strict';
 
-	/********************* HELPERS ********************/
-	function makeRange(a) {
-		let range = [];
+  /********************* HELPERS ********************/
+  function makeRange(a) {
+    let range = [];
 
-		for (let step = a[0], max = a[1]; step <= max; ++step) {
-			range.push(step);
-		}
+    for (let step = a[0], max = a[1]; step <= max; ++step) {
+      range.push(step);
+    }
 
-		return range;
-	}
+    return range;
+  }
 
-	function gcd(a, b) {
-		function step(x, y) {
-			return y % x;
-		}
+  function gcd(a, b) {
+    function step(x, y) {
+      return y % x;
+    }
 
-		if (a > b) {
-			let tmp = b;
-			b = a;
-			a = tmp;
-		}
+    if (a > b) {
+      let tmp = b;
+      b = a;
+      a = tmp;
+    }
 
-		var r = a;
-		while (true) {
-			if (step(a, b) === 0) {
-				return r;
-			}
+    var r = a;
+    while (true) {
+      if (step(a, b) === 0) {
+        return r;
+      }
 
-			r = step(a, b);
-			b = a;
-			a = r;
-		}
-	}
+      r = step(a, b);
+      b = a;
+      a = r;
+    }
+  }
 
-	function lcm(a, b) {
-		return a / gcd(a, b) * b;
-	}
-	/**************************************************/
-
-
-	arr.sort((a, b) => a - b);
-
-	var result = 0;
-	var range = makeRange(arr);
-
-	result = range.reduce((p, c) => lcm(p, c));
+  function lcm(a, b) {
+    return a / gcd(a, b) * b;
+  }
+  /**************************************************/
 
 
-	return result;
+  arr.sort((a, b) => a - b);
+
+  var result = 0;
+  var range = makeRange(arr);
+
+  result = range.reduce((p, c) => lcm(p, c));
+
+
+  return result;
 }
 
 

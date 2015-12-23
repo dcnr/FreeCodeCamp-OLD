@@ -10,13 +10,13 @@
 
 function binaryAgent(str) {
 
-	return str.split(" ")
-		.map(v =>
-			String.fromCharCode(
-				parseInt(v, 2)
-			)
-		)
-		.join("");
+  return str.split(" ")
+    .map(v =>
+      String.fromCharCode(
+        parseInt(v, 2)
+      )
+    )
+    .join("");
 }
 
 

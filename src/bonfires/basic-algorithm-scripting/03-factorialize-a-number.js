@@ -15,11 +15,11 @@
 
 
 function factorialize(num) {
-	if (1 === num || 0 === num) {
-		return 1;
-	}
+  if (1 === num || 0 === num) {
+    return 1;
+  }
 
-	return num * factorialize(num - 1);
+  return num * factorialize(num - 1);
 }
 
 

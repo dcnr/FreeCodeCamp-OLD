@@ -17,14 +17,14 @@
 
 
 function mutation(arr) {
-	return arr[1].length ===
-		arr[1].toLowerCase()
-		.split('')
-		.filter(
-			val => Boolean(~arr[0].toLowerCase()
-				.indexOf(val))
-		)
-		.length;
+  return arr[1].length ===
+    arr[1].toLowerCase()
+    .split('')
+    .filter(
+      val => Boolean(~arr[0].toLowerCase()
+        .indexOf(val))
+    )
+    .length;
 }
 
 

@@ -1,33 +1,33 @@
 module.exports = function () {
-	'use strict';
+  'use strict';
 
-	var expect = require("chai")
-		.expect;
+  var expect = require("chai")
+    .expect;
 
-	var drop = require("./intermediate-algo-collection")
-		.drop;
+  var drop = require("./intermediate-algo-collection")
+    .drop;
 
-	var tests = require("./test-cases/17-test.js");
+  var tests = require("./test-cases/17-test.js");
 
-	describe("Drop It", () => {
-		describe("drop()", () => {
-			it("should return an array", () => {
-				tests.forEach(test => {
-					let result = drop(...test.input);
+  describe("Drop It", () => {
+    describe("drop()", () => {
+      it("should return an array", () => {
+        tests.forEach(test => {
+          let result = drop(...test.input);
 
-					expect(result)
-						.to.be.an("array");
-				});
-			});
+          expect(result)
+            .to.be.an("array");
+        });
+      });
 
-			it("should drop elements until the predicate returns true", () => {
-				tests.forEach(test => {
-					let result = drop(...test.input);
+      it("should drop elements until the predicate returns true", () => {
+        tests.forEach(test => {
+          let result = drop(...test.input);
 
-					expect(result)
-						.to.deep.equal(test.expected);
-				});
-			});
-		});
-	});
+          expect(result)
+            .to.deep.equal(test.expected);
+        });
+      });
+    });
+  });
 };

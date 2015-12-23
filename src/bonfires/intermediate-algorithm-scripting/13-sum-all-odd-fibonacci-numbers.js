@@ -14,29 +14,29 @@
 
 
 function sumFibs(num) {
-	'use strict';
+  'use strict';
 
-	if (num === 1) return 1;
-	if (num < 1) return 0;
+  if (num === 1) return 1;
+  if (num < 1) return 0;
 
-	var result = 0;
-	var fib_seq = [1];
+  var result = 0;
+  var fib_seq = [1];
 
-	for (let p = 0, c = 1, r = 1; r <= num; r = p + c) {
-		p = c;
-		c = r;
-		fib_seq.push(r);
-	}
+  for (let p = 0, c = 1, r = 1; r <= num; r = p + c) {
+    p = c;
+    c = r;
+    fib_seq.push(r);
+  }
 
-	result = fib_seq.reduce((p, c) => {
-		if (c % 2 !== 0) {
-			return p + c;
-		}
+  result = fib_seq.reduce((p, c) => {
+    if (c % 2 !== 0) {
+      return p + c;
+    }
 
-		return p + 0;
-	});
+    return p + 0;
+  });
 
-	return result;
+  return result;
 }
 
 

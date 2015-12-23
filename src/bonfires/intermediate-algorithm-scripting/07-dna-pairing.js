@@ -19,32 +19,32 @@
 
 
 function pair(str) {
-	'use strict';
+  'use strict';
 
-	var pairs = {
-		"A": "T",
-		"C": "G",
+  var pairs = {
+    "A": "T",
+    "C": "G",
 
-		getPair: function (base) {
-			for (let key in this) {
-				if (key === base) {
-					return this[key];
-				}
+    getPair: function (base) {
+      for (let key in this) {
+        if (key === base) {
+          return this[key];
+        }
 
-				if (this[key] === base) {
-					return key;
-				}
-			}
-		} // end getPair
-	};
+        if (this[key] === base) {
+          return key;
+        }
+      }
+    } // end getPair
+  };
 
 
-	var result = [];
-	var sequence = str.split("");
+  var result = [];
+  var sequence = str.split("");
 
-	result = sequence.map(base => [base, pairs.getPair(base)]);
+  result = sequence.map(base => [base, pairs.getPair(base)]);
 
-	return result;
+  return result;
 }
 
 

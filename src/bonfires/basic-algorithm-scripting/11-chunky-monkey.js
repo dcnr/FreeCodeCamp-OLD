@@ -10,14 +10,14 @@
 
 
 function chunk(arr, size) {
-	var result = [];
-	var a = arr.slice(0);
+  var result = [];
+  var a = arr.slice(0);
 
-	while (a.length) {
-		result.push(a.splice(0, size));
-	}
+  while (a.length) {
+    result.push(a.splice(0, size));
+  }
 
-	return result;
+  return result;
 }
 
 

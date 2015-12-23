@@ -15,12 +15,12 @@
 
 
 function truncate(str, num) {
-	if (num >= str.length)
-		return str;
+  if (num >= str.length)
+    return str;
 
-	return str.slice(0, (
-		(num <= 3) ? num : num - 3
-	)) + "...";
+  return str.slice(0, (
+    (num <= 3) ? num : num - 3
+  )) + "...";
 }
 
 
