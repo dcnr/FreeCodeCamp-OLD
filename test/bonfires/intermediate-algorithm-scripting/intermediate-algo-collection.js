@@ -1,2 +1,2 @@
 module.exports = require("../../../src/bonfires/" +
-	"intermediate-algorithm-scripting");
+  "intermediate-algorithm-scripting");

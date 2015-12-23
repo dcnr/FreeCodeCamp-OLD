@@ -1,49 +1,49 @@
 module.exports = function () {
-	'use strict';
+  'use strict';
 
-	var expect = require("chai")
-		.expect;
+  var expect = require("chai")
+    .expect;
 
-	var pair = require("./intermediate-algo-collection")
-		.pair;
+  var pair = require("./intermediate-algo-collection")
+    .pair;
 
-	var tests = require("./test-cases/07-test");
+  var tests = require("./test-cases/07-test");
 
-	describe("DNA Pairing", () => {
-		describe("pair()", () => {
-			it("should return an array that is not empty", () => {
-				tests.forEach(test => {
-					let result = pair(test.input);
+  describe("DNA Pairing", () => {
+    describe("pair()", () => {
+      it("should return an array that is not empty", () => {
+        tests.forEach(test => {
+          let result = pair(test.input);
 
-					expect(result)
-						.to.be.an("array");
+          expect(result)
+            .to.be.an("array");
 
-					// jshint -W030
-					expect(result)
-						.to.not.be.empty;
-				});
-			});
+          // jshint -W030
+          expect(result)
+            .to.not.be.empty;
+        });
+      });
 
-			it("should return a multidimensional array", () => {
-				tests.forEach(test => {
-					let result = pair(test.input);
+      it("should return a multidimensional array", () => {
+        tests.forEach(test => {
+          let result = pair(test.input);
 
 
-					expect(result)
-						.to.satisfy(result => {
-							return result.every(val => val.constructor === Array);
-						}, "element should be an array");
-				});
-			});
+          expect(result)
+            .to.satisfy(result => {
+              return result.every(val => val.constructor === Array);
+            }, "element should be an array");
+        });
+      });
 
-			it("should return DNA pairs", () => {
-				tests.forEach(test => {
-					let result = pair(test.input);
+      it("should return DNA pairs", () => {
+        tests.forEach(test => {
+          let result = pair(test.input);
 
-					expect(result)
-						.to.deep.include.members(test.expected);
-				});
-			});
-		});
-	});
+          expect(result)
+            .to.deep.include.members(test.expected);
+        });
+      });
+    });
+  });
 };
