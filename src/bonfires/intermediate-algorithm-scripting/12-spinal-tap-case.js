@@ -8,23 +8,23 @@
 
 
 function spinalCase(str) {
-	'use strict';
+  'use strict';
 
-	var result = str;
-	var re_spaces = new RegExp(/[\s_]/g);
-	var re_nospaces = new RegExp(/(.)([A-Z])/g);
+  var result = str;
+  var re_spaces = new RegExp(/[\s_]/g);
+  var re_nospaces = new RegExp(/(.)([A-Z])/g);
 
-	if (~result.indexOf(" ") || ~result.indexOf("_")) {
-		result = result.replace(re_spaces, "-");
-	}
-	else {
-		result = result.replace(re_nospaces, "$1-$2");
-	}
+  if (~result.indexOf(" ") || ~result.indexOf("_")) {
+    result = result.replace(re_spaces, "-");
+  }
+  else {
+    result = result.replace(re_nospaces, "$1-$2");
+  }
 
-	result = result.toLowerCase();
+  result = result.toLowerCase();
 
 
-	return result;
+  return result;
 }
 
 

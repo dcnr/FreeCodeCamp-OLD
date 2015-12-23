@@ -9,11 +9,11 @@
 
 
 function find(arr, func) {
-	var num = 0;
+  var num = 0;
 
-	num = arr.find(v => func(v));
+  num = arr.find(v => func(v));
 
-	return num;
+  return num;
 }
 
 

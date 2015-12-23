@@ -8,15 +8,15 @@
 
 
 function drop(arr, func) {
-	var result = [];
+  var result = [];
 
-	var index = arr.findIndex(v => func(v));
+  var index = arr.findIndex(v => func(v));
 
-	if (~index) {
-		result = arr.slice(index);
-	}
+  if (~index) {
+    result = arr.slice(index);
+  }
 
-	return result;
+  return result;
 }
 
 

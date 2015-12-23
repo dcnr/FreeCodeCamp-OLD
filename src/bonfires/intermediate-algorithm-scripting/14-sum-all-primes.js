@@ -13,34 +13,34 @@
 
 
 function sumPrimes(num) {
-	'use strict';
+  'use strict';
 
-	function checkPrime(n) {
-		//
-		// IN THIS FUNCTION:
-		// HORRIBLE TRIAL DIVISION
-		//
+  function checkPrime(n) {
+    //
+    // IN THIS FUNCTION:
+    // HORRIBLE TRIAL DIVISION
+    //
 
-		let max = Math.sqrt(n);
+    let max = Math.sqrt(n);
 
-		for (let i = 2; i <= max; ++i) {
-			let x = n / i;
+    for (let i = 2; i <= max; ++i) {
+      let x = n / i;
 
-			if (parseInt(x, 10) === x)
-				return false;
-		}
+      if (parseInt(x, 10) === x)
+        return false;
+    }
 
-		return true;
-	}
+    return true;
+  }
 
-	var result = 0;
+  var result = 0;
 
-	for (let i = 2; i <= num; ++i) {
-		if (checkPrime(i))
-			result += i;
-	}
+  for (let i = 2; i <= num; ++i) {
+    if (checkPrime(i))
+      result += i;
+  }
 
-	return result;
+  return result;
 }
 
 

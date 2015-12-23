@@ -9,20 +9,20 @@
 
 
 function convert(str) {
-	'use strict';
+  'use strict';
 
-	const ENTITIES = {
-		"&" : "&amp;",
-		"<" : "&lt;",
-		">" : "&gt;",
-		'"' : "&quot;",
-		"'" : "&apos;"
-	};
+  const ENTITIES = {
+    "&" : "&amp;",
+    "<" : "&lt;",
+    ">" : "&gt;",
+    '"' : "&quot;",
+    "'" : "&apos;"
+  };
 
-	var pattern = new RegExp("[&<>\"']", "g");
-	var result = str.replace(pattern, (match) => ENTITIES[match]);
+  var pattern = new RegExp("[&<>\"']", "g");
+  var result = str.replace(pattern, (match) => ENTITIES[match]);
 
-	return result;
+  return result;
 }
 
 

@@ -21,33 +21,33 @@
 
 
 function add() {
-	'use strict';
-	var result = 0;
+  'use strict';
+  var result = 0;
 
-	if (arguments.length > 1) {
-		for (let i = 0, len = arguments.length; i < len; ++i) {
-			if (typeof arguments[i] !== "number")
-				return undefined;
+  if (arguments.length > 1) {
+    for (let i = 0, len = arguments.length; i < len; ++i) {
+      if (typeof arguments[i] !== "number")
+        return undefined;
 
-			result += arguments[i];
-		}
+      result += arguments[i];
+    }
 
-		return result;
-	}
+    return result;
+  }
 
-	if (typeof arguments[0] !== "number")
-		return undefined;
+  if (typeof arguments[0] !== "number")
+    return undefined;
 
 
-	let y = arguments[0];
-	result = function(x) {
-		if (typeof x !== "number")
-			return undefined;
+  let y = arguments[0];
+  result = function(x) {
+    if (typeof x !== "number")
+      return undefined;
 
-		return x + y;
-	};
+    return x + y;
+  };
 
-	return result;
+  return result;
 }
 
 

@@ -7,39 +7,39 @@
 
 
 function steamroller(arr) {
-	'use strict';
+  'use strict';
 
-	var result = [];
-	var clone = JSON.parse(JSON.stringify(arr));
+  var result = [];
+  var clone = JSON.parse(JSON.stringify(arr));
 
-	clone.forEach(v => {
+  clone.forEach(v => {
 
-		if (v instanceof Array) {
-			let tmp;
+    if (v instanceof Array) {
+      let tmp;
 
-			while (v instanceof Array && v.length) {
-				tmp = v.shift();
+      while (v instanceof Array && v.length) {
+        tmp = v.shift();
 
-				if (tmp instanceof Array) {
-					if (tmp.length === 1 && !(tmp[0] instanceof Array)) {
-						result.push(tmp[0]);
-						break;
-					}
+        if (tmp instanceof Array) {
+          if (tmp.length === 1 && !(tmp[0] instanceof Array)) {
+            result.push(tmp[0]);
+            break;
+          }
 
-					v = tmp;
-				} else {
-					result.push(tmp);
-				}
-			}
+          v = tmp;
+        } else {
+          result.push(tmp);
+        }
+      }
 
-		}
-		else {
-			result.push(v);
-		}
-	});
+    }
+    else {
+      result.push(v);
+    }
+  });
 
 
-	return result;
+  return result;
 }
 
 

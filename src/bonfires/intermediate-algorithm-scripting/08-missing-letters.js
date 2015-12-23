@@ -9,27 +9,27 @@
 
 
 function fearNotLetter(str) {
-	'use strict';
+  'use strict';
 
-	var sequence = [];
-	var result = '';
+  var sequence = [];
+  var result = '';
 
-	for (let i = 0, len = str.length; i < len; ++i) {
-		sequence.push(str.charCodeAt(i));
-	}
+  for (let i = 0, len = str.length; i < len; ++i) {
+    sequence.push(str.charCodeAt(i));
+  }
 
-	for (let i = 0, len = sequence.length; i < len; ++i) {
-		if (sequence[i] + 1 != sequence[i + 1] && // check if next is sequential
-			i + 1 < len) { // check for out of bounds
-			result = String.fromCharCode(sequence[i] + 1);
-			break;
-		}
-		else {
-			result = undefined;
-		}
-	}
+  for (let i = 0, len = sequence.length; i < len; ++i) {
+    if (sequence[i] + 1 != sequence[i + 1] && // check if next is sequential
+      i + 1 < len) { // check for out of bounds
+      result = String.fromCharCode(sequence[i] + 1);
+      break;
+    }
+    else {
+      result = undefined;
+    }
+  }
 
-	return result;
+  return result;
 }
 
 

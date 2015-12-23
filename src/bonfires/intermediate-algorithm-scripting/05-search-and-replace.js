@@ -19,23 +19,23 @@
 
 
 function myReplace(str, before, after) {
-	'use strict';
+  'use strict';
 
-	var result = "";
+  var result = "";
 
-	function checkCase(match) {
-		if (match.charAt(0) === match.charAt(0)
-			.toUpperCase()) {
-			let newCase = after.charAt(0)
-				.toUpperCase() + after.slice(1);
+  function checkCase(match) {
+    if (match.charAt(0) === match.charAt(0)
+      .toUpperCase()) {
+      let newCase = after.charAt(0)
+        .toUpperCase() + after.slice(1);
 
-			return newCase;
-		}
+      return newCase;
+    }
 
-		return after;
-	}
+    return after;
+  }
 
-	return str.replace(before, checkCase);
+  return str.replace(before, checkCase);
 }
 
 

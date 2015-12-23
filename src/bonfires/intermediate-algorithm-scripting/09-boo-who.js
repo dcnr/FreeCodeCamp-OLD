@@ -10,7 +10,7 @@
 
 
 function boo(bool) {
-	return bool === true || bool === false;
+  return bool === true || bool === false;
 }
 
 
