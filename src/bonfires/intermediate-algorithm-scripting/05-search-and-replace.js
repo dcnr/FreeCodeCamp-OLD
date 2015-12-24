@@ -21,21 +21,22 @@
 function myReplace(str, before, after) {
   'use strict';
 
-  var result = "";
+  function replacement(matched) {
+    const first_char = matched.charAt(0);
 
-  function checkCase(match) {
-    if (match.charAt(0) === match.charAt(0)
-      .toUpperCase()) {
-      let newCase = after.charAt(0)
-        .toUpperCase() + after.slice(1);
+    if (/[A-Z]/.test(first_char)) {
+      const new_word = after.charAt(0)
+        .toUpperCase() + after.substr(1);
 
-      return newCase;
+      return new_word;
     }
 
     return after;
   }
 
-  return str.replace(before, checkCase);
+  const result = str.replace(before, replacement);
+
+  return result;
 }
 
 
