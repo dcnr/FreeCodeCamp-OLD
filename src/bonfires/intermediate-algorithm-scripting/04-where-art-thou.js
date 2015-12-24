@@ -17,7 +17,7 @@
  *    first: "Mercutio",
  *    last: null
  *  },
- * {
+ *  {
  *    first: "Tybalt",
  *    last: "Capulet"
  *  }],
@@ -39,22 +39,25 @@ function where(collection, source) {
   'use strict';
 
   function compare(obj) {
-    for (let prop in source) {
-      if (source.hasOwnProperty(prop)) {
-        if (!obj.hasOwnProperty(prop)) {
-          return false;
+    const result = source_props.every(prop => {
+      if (obj.hasOwnProperty(prop)) {
+        if (obj[prop] !== source[prop]) {
+          return false; // have prop but does not match
         }
-        else {
-          if (obj[prop] !== source[prop])
-            return false;
-        }
-      }
-    }
 
-    return true;
+        return true; // all properties matched
+      }
+
+      return false; // obj does not have property
+    });
+
+    return result;
   }
 
-  return collection.filter(compare);
+  const source_props = Object.keys(source);
+  const result = collection.filter(compare);
+
+  return result;
 }
 
 
