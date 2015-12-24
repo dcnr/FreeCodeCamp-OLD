@@ -15,7 +15,9 @@
 
 
 function factorialize(num, acc) {
-  if (acc === undefined) acc = 1;
+  if (acc === undefined) {
+    acc = 1;
+  }
 
   if (1 === num || 0 === num) {
     return acc;
