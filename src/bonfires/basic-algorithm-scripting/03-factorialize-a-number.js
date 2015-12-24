@@ -14,12 +14,16 @@
  */
 
 
-function factorialize(num) {
-  if (1 === num || 0 === num) {
-    return 1;
+function factorialize(num, acc) {
+  if (acc === undefined) {
+    acc = 1;
   }
 
-  return num * factorialize(num - 1);
+  if (1 === num || 0 === num) {
+    return acc;
+  }
+
+  return factorialize(num - 1, acc * num);
 }
 
 
