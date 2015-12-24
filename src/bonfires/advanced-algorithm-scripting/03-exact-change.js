@@ -17,49 +17,68 @@
  */
 
 
-function CashOnHand(cid) {
+function Cashier(cid) {
   'use strict';
 
-  const that = this;
+  const _cash_on_hand = (function (cid) {
+    // convert the cid array into an
+    // object with key,value pairs
+    let coh = cid.reduce((obj, pair) => {
+      // pair is the [denomination, value]
+      obj[pair[0]] = pair[1];
 
-  const _coh = (function (cid) {
-    let coh = {};
+      return obj;
+    }, {});
 
-    cid.forEach(till => {
-      const denomination = till[0];
-      const amount = till[1];
-
-      coh[denomination] = amount;
-    });
-
-    coh.TOTAL = Object.keys(coh)
-      .reduce((total, cash) => {
-        return total + coh[cash];
-      }, 0);
+    coh.TOTALCASH = Object.keys(coh)
+      .reduce((total, den) => total + coh[den], 0);
 
     return coh;
   })(cid);
 
-  this.getTotal = function () {
-    return _coh.TOTAL;
+  this.getTotalCash = function () {
+    return _cash_on_hand.TOTALCASH;
   };
 
+  this.giveChange = function () {
+    let change = [];
+    const order = [];
+
+
+
+    return change;
+  };
 }
 
 
 function drawer(price, cash, cid) {
   'use strict';
 
-  let total_change = cash - price;
-  const cash_on_hand = new CashOnHand(cid);
+  const change_needed = cash - price;
+  const Alice = new Cashier(cid);
 
-  if (total_change > cash_on_hand.getTotal()) {
+  if (change_needed > Alice.getTotalCash()) {
     return "Insufficient Funds";
   }
 
+  let change = Alice.giveChange();
 
-  return 0;
+  return change;
 }
+
+
+console.log(
+  drawer(
+    19.50,
+    20.00, [
+      ["PENNY", 0.01], ["NICKEL", 0],
+      ["DIME", 0], ["QUARTER", 0],
+      ["ONE", 0], ["FIVE", 0],
+      ["TEN", 0], ["TWENTY", 0],
+      ["ONE HUNDRED", 0]
+    ]
+  )
+);
 
 
 module.exports = drawer;
