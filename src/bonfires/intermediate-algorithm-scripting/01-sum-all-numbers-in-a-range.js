@@ -11,18 +11,20 @@
 
 
 function sumAll(arr) {
-  var input = arr.slice(0);
+  'use strict';
 
-  input.sort((a, b) => a - b);
-  var result = input[0];
+  arr.sort((a, b) => a - b);
 
-  while (input[1] > input[0]) {
-    result += input[1];
-    input[1]--;
-  }
+  let range = new Array(arr[1] - arr[0] + 1)
+    .fill(0);
+
+  let i = arr[0];
+  const result = range.map(v => v = i++)
+    .reduce((a, b) => a + b);
 
   return result;
 }
+
 
 /* exports */
 module.exports = sumAll;
