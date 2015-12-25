@@ -20,30 +20,53 @@
 function Cashier(cid) {
   'use strict';
 
-  const _cash_on_hand = (function (cid) {
-    // convert the cid array into an
-    // object with key,value pairs
-    let coh = cid.reduce((obj, pair) => {
-      // pair is the [denomination, value]
-      obj[pair[0]] = pair[1];
+  const _drawer = (function (cid) {
+    const den_values = [
+      100.00, 20.00, 10.00,
+      5.00, 1.00, 0.25,
+      0.10, 0.05, 0.01
+    ];
 
-      return obj;
-    }, {});
+    // reverse the incoming cid to
+    // greatest to smallest
+    cid.reverse();
+    const drawer = cid.reduce((drawer, pair, pos) => {
+      // pair is [denomination, amount]
+      const den = pair[0];
+      const amount = pair[1];
 
-    coh.TOTALCASH = Object.keys(coh)
-      .reduce((total, den) => total + coh[den], 0);
 
-    return coh;
+      // compute pieces of bills or coins
+      // account for scaling
+      const pieces = Math.round(
+        (amount / den_values[pos] + 0.00001) * 100
+      ) / 100;
+
+
+      // update TOTALCASH, account for scaling
+      drawer.TOTALCASH = Math.round(
+        (drawer.TOTALCASH + amount + 0.00001) * 100
+      ) / 100;
+
+      drawer.cid.push([den, amount, pieces, den_values[pos]]);
+
+      return drawer;
+    }, {
+      cid: [],
+      TOTALCASH: 0.00
+    });
+
+    return drawer;
   })(cid);
 
+
   this.getTotalCash = function () {
-    return _cash_on_hand.TOTALCASH;
+    return _drawer;
   };
 
-  this.giveChange = function () {
-    let change = [];
-    const order = [];
 
+  this.giveChange = function (change_needed) {
+    let change = [];
 
 
     return change;
@@ -57,27 +80,30 @@ function drawer(price, cash, cid) {
   const change_needed = cash - price;
   const Alice = new Cashier(cid);
 
+
   if (change_needed > Alice.getTotalCash()) {
     return "Insufficient Funds";
   }
 
-  let change = Alice.giveChange();
+
+  if (change_needed === Alice.getTotalCash()) {
+    return "Closed";
+  }
+
+
+  const change = Alice.getTotalCash();
 
   return change;
 }
 
 
 console.log(
-  drawer(
-    19.50,
-    20.00, [
-      ["PENNY", 0.01], ["NICKEL", 0],
-      ["DIME", 0], ["QUARTER", 0],
-      ["ONE", 0], ["FIVE", 0],
-      ["TEN", 0], ["TWENTY", 0],
-      ["ONE HUNDRED", 0]
-    ]
-  )
+  drawer(3.26, 100.00, [
+      ["PENNY", 1.01], ["NICKEL", 2.05],
+       ["DIME", 3.10], ["QUARTER", 4.25],
+        ["ONE", 90.00], ["FIVE", 55.00],
+        ["TEN", 20.00], ["TWENTY", 60.00],
+         ["ONE HUNDRED", 100.00]])
 );
 
 
