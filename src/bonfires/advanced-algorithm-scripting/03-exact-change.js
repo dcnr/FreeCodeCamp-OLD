@@ -20,6 +20,13 @@
 function Cashier(cid) {
   'use strict';
 
+  // drawer is a modification of the cid
+  // it is an object that has an updated
+  // cid which holds the pieces of bills
+  // or coins it has, and the value of
+  // the different denomination.
+  // it also has a field for the total
+  // cash on hand
   const _drawer = (function (cid) {
     const den_values = [
       100.00, 20.00, 10.00,
@@ -28,7 +35,7 @@ function Cashier(cid) {
     ];
 
 
-    // reverse the incoming cid to greatest to smallest
+    // reverse the incoming cid to greatest to least
     cid.reverse();
     const drawer = cid.reduce((drawer, pair, pos) => {
       // pair is [denomination, amount]
@@ -87,10 +94,8 @@ function Cashier(cid) {
     const value = 3;
 
 
-    // start giving change, from highest to lowest
-    for (let i = 0, len = _drawer.cid.length; i < len; ++i) {
-      let cash = _drawer.cid[i];
-
+    // dole out cash starting from the highest value
+    _drawer.cid.forEach(cash => {
       if (cash[value] <= change_needed && cash[pieces] > 0) {
         let pieces_needed = Math.floor(change_needed / cash[value]);
         let paid_out = payOut(pieces_needed, cash);
@@ -101,7 +106,7 @@ function Cashier(cid) {
 
         total_change.push([cash[denomination], paid_out]);
       }
-    }
+    });
 
     if (change_needed !== 0) {
       return "Insufficient Funds";
