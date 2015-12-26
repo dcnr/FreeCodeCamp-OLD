@@ -27,28 +27,25 @@ function Cashier(cid) {
       0.10, 0.05, 0.01
     ];
 
-    // reverse the incoming cid to
-    // greatest to smallest
+
+    // reverse the incoming cid to greatest to smallest
     cid.reverse();
     const drawer = cid.reduce((drawer, pair, pos) => {
       // pair is [denomination, amount]
       const den = pair[0];
       const amount = pair[1];
 
-
-      // compute pieces of bills or coins
-      // account for scaling
+      // compute pieces of bills or coins, account for scaling
       const pieces = Math.round(
         (amount / den_values[pos] + 0.00001) * 100
       ) / 100;
 
+      drawer.cid.push([den, amount, pieces, den_values[pos]]);
 
       // update TOTALCASH, account for scaling
       drawer.TOTALCASH = Math.round(
         (drawer.TOTALCASH + amount + 0.00001) * 100
       ) / 100;
-
-      drawer.cid.push([den, amount, pieces, den_values[pos]]);
 
       return drawer;
     }, {
@@ -56,22 +53,64 @@ function Cashier(cid) {
       TOTALCASH: 0.00
     });
 
+
     return drawer;
   })(cid);
 
 
   this.getTotalCash = function () {
-    return _drawer;
+    return _drawer.TOTALCASH;
   };
 
 
   this.giveChange = function (change_needed) {
-    let change = [];
+    function payOut(pieces_needed, cash) {
+      let paid_out;
+
+      // have fewer bills or coins than needed
+      if (pieces_needed > cash[pieces]) {
+        paid_out = cash[pieces] * cash[value];
+      }
+      // have more than enough bills or coins
+      else {
+        paid_out = cash[value] * pieces_needed;
+      }
+
+      return paid_out;
+    }
 
 
-    return change;
+    let total_change = [];
+    const denomination = 0;
+    const amount = 1;
+    const pieces = 2;
+    const value = 3;
+
+
+    // start giving change, from highest to lowest
+    for (let i = 0, len = _drawer.cid.length; i < len; ++i) {
+      let cash = _drawer.cid[i];
+
+      if (cash[value] <= change_needed && cash[pieces] > 0) {
+        let pieces_needed = Math.floor(change_needed / cash[value]);
+        let paid_out = payOut(pieces_needed, cash);
+
+        change_needed = Math.round(
+          (change_needed - paid_out + 0.0001) * 100
+        ) / 100;
+
+        total_change.push([cash[denomination], paid_out]);
+      }
+    }
+
+    if (change_needed !== 0) {
+      return "Insufficient Funds";
+    }
+
+
+    return total_change;
   };
-}
+} // end Cashier
 
 
 function drawer(price, cash, cid) {
@@ -85,26 +124,15 @@ function drawer(price, cash, cid) {
     return "Insufficient Funds";
   }
 
-
   if (change_needed === Alice.getTotalCash()) {
     return "Closed";
   }
 
+  const change = Alice.giveChange(change_needed);
 
-  const change = Alice.getTotalCash();
 
   return change;
 }
-
-
-console.log(
-  drawer(3.26, 100.00, [
-      ["PENNY", 1.01], ["NICKEL", 2.05],
-       ["DIME", 3.10], ["QUARTER", 4.25],
-        ["ONE", 90.00], ["FIVE", 55.00],
-        ["TEN", 20.00], ["TWENTY", 60.00],
-         ["ONE HUNDRED", 100.00]])
-);
 
 
 module.exports = drawer;
