@@ -19,6 +19,7 @@
   ],
   "author": "Norman Dela Cruz",
   "license": "GPL-3.0",
+  "private": true,
   "bugs": {
     "url": "https://github.com/dcnr/FreeCodeCamp/issues"
   },
