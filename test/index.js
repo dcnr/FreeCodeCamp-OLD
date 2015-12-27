@@ -72,6 +72,7 @@
     require(advanced + "01-validate-us-telephone-numbers-spec"),
     require(advanced + "02-symmetric-difference-spec"),
     require(advanced + "03-exact-change-spec"),
+    require(advanced + "04-inventory-update-spec"),
   ];
 
 
