@@ -61,6 +61,7 @@ function setPath(type, filelist) {
       require(advanced + "02-symmetric-difference-spec"),
       require(advanced + "03-exact-change-spec"),
       require(advanced + "04-inventory-update-spec"),
+      require(advanced + "05-no-repeats-please-spec"),
    ];
 
 
