@@ -1,3 +1,18 @@
 {
-	"esnext": true
+  "esnext": true,
+  "strict": true,
+  "node": true,
+  "mocha": true,
+  "curly": true,
+  "eqeqeq": true,
+  "forin": true,
+  "freeze": true,
+  "latedef": true,
+  "maxdepth": 2,
+  "nonew": true,
+  "notypeof": true,
+  "singleGroups": true,
+  "undef": true,
+  "unused": true,
+  "varstmt": true
 }
