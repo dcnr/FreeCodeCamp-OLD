@@ -1,22 +1,22 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var pair = require("./intermediate-algo-collection")
+  const pair = require('./intermediate-algo-collection')
     .pair;
 
-  var tests = require("./test-cases/07-test");
+  const tests = require('./test-cases/07-test');
 
-  describe("DNA Pairing", () => {
-    describe("pair()", () => {
-      it("should return an array that is not empty", () => {
+  describe('DNA Pairing', function () {
+    describe('pair()', function () {
+      it('should return an array that is not empty', function () {
         tests.forEach(test => {
           let result = pair(test.input);
 
           expect(result)
-            .to.be.an("array");
+            .to.be.an('array');
 
           // jshint -W030
           expect(result)
@@ -24,19 +24,20 @@ module.exports = function () {
         });
       });
 
-      it("should return a multidimensional array", () => {
+      it('should return a multidimensional array', function () {
         tests.forEach(test => {
           let result = pair(test.input);
 
 
           expect(result)
             .to.satisfy(result => {
-              return result.every(val => val.constructor === Array);
-            }, "element should be an array");
+              return result.every(val => val.constructor ===
+                Array);
+            }, 'element should be an array');
         });
       });
 
-      it("should return DNA pairs", () => {
+      it('should return DNA pairs', function () {
         tests.forEach(test => {
           let result = pair(test.input);
 

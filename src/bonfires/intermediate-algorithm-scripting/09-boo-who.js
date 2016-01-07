@@ -10,6 +10,8 @@
 
 
 function boo(bool) {
+  'use strict';
+
   return bool === true || bool === false;
 }
 

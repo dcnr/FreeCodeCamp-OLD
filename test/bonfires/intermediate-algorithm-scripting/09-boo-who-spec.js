@@ -1,26 +1,26 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var boo = require("./intermediate-algo-collection")
+  const boo = require('./intermediate-algo-collection')
     .boo;
 
-  var tests = require("./test-cases/09-test.js");
+  const tests = require('./test-cases/09-test.js');
 
-  describe("Boo Whoo", () => {
-    describe("boo()", () => {
-      it("should return a boolean", () => {
+  describe('Boo Whoo', function () {
+    describe('boo()', function () {
+      it('should return a boolean', function () {
         tests.forEach(test => {
           let result = boo(test.input);
 
           expect(result)
-            .to.be.a("boolean");
+            .to.be.a('boolean');
         });
       });
 
-      it("should check if input is a boolean primitive", () => {
+      it('should check if input is a boolean primitive', function () {
         tests.forEach(test => {
           let result = boo(test.input);
 

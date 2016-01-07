@@ -15,25 +15,33 @@ function permAlone(str) {
 
   let total = 0;
   let n = str.length;
-  str = str.split("");
+  str = str.split('');
+
 
   // Heap's Algorithm by B.R. Heap
   function perm(n, a) {
+    function swap(n, i) {
+      if (n % 2 === 0) {
+        let tmp = a[i];
+        a[i] = a[n - 1];
+        a[n - 1] = tmp;
+      }
+      else {
+        let tmp = a[0];
+        a[0] = a[n - 1];
+        a[n - 1] = tmp;
+      }
+    }
+
+
     if (n === 1) {
       lookForDupes(a);
-    } else {
+    }
+    else {
       for (let i = 0, len = n - 1; i < len; ++i) {
         perm(n - 1, a);
 
-        if (n % 2 === 0) {
-          let tmp = a[i];
-          a[i] = a[n - 1];
-          a[n - 1] = tmp;
-        } else {
-          let tmp = a[0];
-          a[0] = a[n - 1];
-          a[n - 1] = tmp;
-        }
+        swap(n, i);
       }
 
       perm(n - 1, a);

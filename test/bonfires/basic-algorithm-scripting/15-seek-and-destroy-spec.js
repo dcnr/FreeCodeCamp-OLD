@@ -1,11 +1,13 @@
 module.exports = function () {
-  var expect = require("chai")
+  'use strict';
+
+  const expect = require('chai')
     .expect;
 
-  var destroyer = require("./basic-algo-collection")
+  const destroyer = require('./basic-algo-collection')
     .destroyer;
 
-  var test_values = [
+  const test_values = [
     {
       input: [1, 2, 3, 1, 2, 3],
       args: [2, 3],
@@ -27,27 +29,28 @@ module.exports = function () {
       expected: []
     },
     {
-      input: ["tree", "hamburger", 53],
-      args: ["tree", 53],
-      expected: ["hamburger"]
+      input: ['tree', 'hamburger', 53],
+      args: ['tree', 53],
+      expected: ['hamburger']
     }
   ];
 
-  describe("Seek and Destroy", () => {
-    describe("destroyer()", () => {
-      it("should return an array", () => {
+  describe('Seek and Destroy', function () {
+    describe('destroyer()', function () {
+      it('should return an array', function () {
         test_values.forEach(test => {
-          var result = destroyer(test.input, ...test.args);
+          const result = destroyer(test.input, ...test.args);
 
           expect(result)
-            .to.be.an("array");
+            .to.be.an('array');
         });
       });
 
-      it("should remove the elements given in the arguments " +
-        "from the array", () => {
+      it('should remove the elements given in the arguments ' +
+        'from the array',
+        function () {
           test_values.forEach(test => {
-            var result = destroyer(test.input, ...test.args);
+            const result = destroyer(test.input, ...test.args);
 
             expect(result)
               .to.deep.equal(test.expected);

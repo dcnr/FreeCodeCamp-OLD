@@ -7,7 +7,7 @@ module.exports = function () {
     .rot13;
 
 
-  describe("Ceasar's Cipher", function () {
+  describe("Caesar's Cipher", function () {
     describe('rot13', function () {
       it('should return a string', function () {
         const result = rot13('SERR PBQR PNZC');

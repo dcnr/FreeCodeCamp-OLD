@@ -16,17 +16,17 @@
 function unite(arr1, arr2, arr3) {
   'use strict';
 
-  var set = Array.prototype.concat(...arguments);
+  const set = Array.prototype.concat(...arguments);
 
-  var result = set.filter(
-    (num, index) => {
-      while (~set.indexOf(num, index) && num !== undefined) {
-        let loc = set.indexOf(num, index);
-        delete set[loc];
-      }
+  const result = set.filter((num, index) => {
+    while (~set.indexOf(num, index) && num !== undefined) {
+      const loc = set.indexOf(num, index);
+      delete set[loc];
+    }
 
-      return true;
-    });
+    return true;
+  });
+
 
   return result;
 }

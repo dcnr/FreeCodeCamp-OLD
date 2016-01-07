@@ -1,27 +1,28 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var unite = require("./intermediate-algo-collection")
+  const unite = require('./intermediate-algo-collection')
     .unite;
 
-  var tests = require("./test-cases/10-test.js");
+  const tests = require('./test-cases/10-test.js');
 
-  describe("Sorted Union", () => {
-    describe("unite()", () => {
-      it("should return an array", () => {
+  describe('Sorted Union', function () {
+    describe('unite()', function () {
+      it('should return an array', function () {
         tests.forEach(test => {
           let result = unite(...test.input);
 
           expect(result)
-            .to.be.an("array");
+            .to.be.an('array');
         });
       });
 
-      it("should return all unique values in their original " +
-        "order", () => {
+      it('should return all unique values in their original ' +
+        'order',
+        function () {
           tests.forEach(test => {
             let result = unite(...test.input);
 

@@ -1,69 +1,76 @@
 module.exports = function () {
-  var expect = require("chai")
+  'use strict';
+
+  const expect = require('chai')
     .expect;
 
-  var repeat = require("./basic-algo-collection")
+  const repeat = require('./basic-algo-collection')
     .repeat;
 
-  var test_values = [
+  const test_values = [
     {
-      "input": {
-        "src": "abc",
-        "num": 3
+      input: {
+        src: 'abc',
+        num: 3
       },
-      "expected": "abcabcabc"
+      expected: 'abcabcabc'
     },
+
     {
-      "input": {
-        "src": "*",
-        "num": 3
+      input: {
+        src: '*',
+        num: 3
       },
-      "expected": "***"
+      expected: '***'
     },
+
     {
-      "input": {
-        "src": "abc",
-        "num": 4
+      input: {
+        src: 'abc',
+        num: 4
       },
-      "expected": "abcabcabcabc"
+      expected: 'abcabcabcabc'
     },
+
     {
-      "input": {
-        "src": "abc",
-        "num": 1
+      input: {
+        src: 'abc',
+        num: 1
       },
-      "expected": "abc"
+      expected: 'abc'
     },
+
     {
-      "input": {
-        "src": "*",
-        "num": 8
+      input: {
+        src: '*',
+        num: 8
       },
-      "expected": "********"
+      expected: '********'
     },
+
     {
-      "input": {
-        "src": "abc",
-        "num": -2
+      input: {
+        src: 'abc',
+        num: -2
       },
-      "expected": ""
+      expected: ''
     }
   ];
 
-  describe("Repeat a String", () => {
-    describe("repeat()", () => {
-      it("should return a string", () => {
+  describe('Repeat a String', function () {
+    describe('repeat()', function () {
+      it('should return a string', function () {
         test_values.forEach(test => {
-          var result = repeat(test.input.src, test.input.num);
+          const result = repeat(test.input.src, test.input.num);
 
           expect(result)
-            .to.be.a("string");
+            .to.be.a('string');
         });
       });
 
-      it("should repeat a given string, n times", () => {
+      it('should repeat a given string, n times', function () {
         test_values.forEach(test => {
-          var result = repeat(test.input.src, test.input.num);
+          const result = repeat(test.input.src, test.input.num);
 
           expect(result)
             .to.be.equal(test.expected);

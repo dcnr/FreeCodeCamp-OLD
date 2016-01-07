@@ -1,33 +1,34 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var sumFibs = require("./intermediate-algo-collection")
+  const sumFibs = require('./intermediate-algo-collection')
     .sumFibs;
 
-  var tests = require("./test-cases/13-test.js");
+  const tests = require('./test-cases/13-test.js');
 
-  describe("Sum All Odd Fibonacci Numbers", () => {
-    describe("sumFibs()", () => {
-      it("should return a number", () => {
+  describe('Sum All Odd Fibonacci Numbers', function () {
+    describe('sumFibs()', function () {
+      it('should return a number', function () {
         tests.forEach(test => {
           let result = sumFibs(test.input);
 
           expect(result)
-            .to.be.a("number");
+            .to.be.a('number');
         });
       });
 
-      it("should sum odd Fibonacci numbers up to given input", () => {
-        tests.forEach(test => {
-          let result = sumFibs(test.input);
+      it('should sum odd Fibonacci numbers up to given input',
+        function () {
+          tests.forEach(test => {
+            let result = sumFibs(test.input);
 
-          expect(result)
-            .to.equal(test.expected);
+            expect(result)
+              .to.equal(test.expected);
+          });
         });
-      });
     });
   });
 };

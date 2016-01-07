@@ -1,27 +1,28 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var myReplace = require("./intermediate-algo-collection")
+  const myReplace = require('./intermediate-algo-collection')
     .myReplace;
 
-  var tests = require("./test-cases/05-test.js");
+  const tests = require('./test-cases/05-test.js');
 
-  describe("Search and Replace", () => {
-    describe("myReplace()", () => {
-      it("should return a string", () => {
+  describe('Search and Replace', function () {
+    describe('myReplace()', function () {
+      it('should return a string', function () {
         tests.forEach(test => {
           let result = myReplace(...test.input);
 
           expect(result)
-            .to.be.a("string");
+            .to.be.a('string');
         });
       });
 
-      it("should replace the target word with the supplied word " +
-        "while maintaining its case.", () => {
+      it('should replace the target word with the supplied word ' +
+        'while maintaining its case.',
+        function () {
           tests.forEach(test => {
             let result = myReplace(...test.input);
 

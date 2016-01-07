@@ -11,23 +11,22 @@
 function fearNotLetter(str) {
   'use strict';
 
-  var sequence = [];
-  var result = '';
+  let result;
+  let sequence = str
+    .split('')
+    .map(char => char.charCodeAt());
 
-  for (let i = 0, len = str.length; i < len; ++i) {
-    sequence.push(str.charCodeAt(i));
-  }
 
   for (let i = 0, len = sequence.length; i < len; ++i) {
-    if (sequence[i] + 1 != sequence[i + 1] && // check if next is sequential
-      i + 1 < len) { // check for out of bounds
-      result = String.fromCharCode(sequence[i] + 1);
+    const next_char = sequence[i + 1] || 'out of bounds';
+    const supposed_next_char = sequence[i] + 1;
+
+    if (next_char !== supposed_next_char && next_char !== 'out of bounds') {
+      result = String.fromCharCode(supposed_next_char);
       break;
     }
-    else {
-      result = undefined;
-    }
   }
+
 
   return result;
 }

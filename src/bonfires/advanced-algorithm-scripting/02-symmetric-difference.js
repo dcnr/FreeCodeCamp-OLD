@@ -26,6 +26,7 @@ function sym(args) {
     return unique.filter(v => v);
   }
 
+
   function diff(a, b) {
     let set = {};
     a = removeDupes(a);
@@ -45,8 +46,9 @@ function sym(args) {
 
     return Object.keys(set)
       .filter(ck => {
-        if (set[ck] === 1)
+        if (set[ck] === 1) {
           return true;
+        }
       })
       .map(cv => parseInt(cv, 10));
   }

@@ -10,22 +10,22 @@
  * For example, if the first argument is
  *
  * [{
- *    first: "Romeo",
- *    last: "Montague"
+ *    first: 'Romeo',
+ *    last: 'Montague'
  *  },
  *  {
- *    first: "Mercutio",
+ *    first: 'Mercutio',
  *    last: null
  *  },
  *  {
- *    first: "Tybalt",
- *    last: "Capulet"
+ *    first: 'Tybalt',
+ *    last: 'Capulet'
  *  }],
  *
  * and the second argument is
  *
  * {
- * last: "Capulet"
+ * last: 'Capulet'
  * }
  *
  * then you must return the third object from the array(the first argument),
@@ -39,23 +39,27 @@ function where(collection, source) {
   'use strict';
 
   function compare(obj) {
-    const result = source_props.every(prop => {
-      if (obj.hasOwnProperty(prop)) {
-        if (obj[prop] !== source[prop]) {
-          return false; // have prop but does not match
+    const result = Object
+      .keys(source)
+      .every(prop => {
+        if (obj.hasOwnProperty(prop)) {
+          if (obj[prop] !== source[prop]) {
+            return false; // have prop but does not match
+          }
+
+          return true; // all properties matched
         }
 
-        return true; // all properties matched
-      }
+        return false; // obj does not have property
+      });
 
-      return false; // obj does not have property
-    });
 
     return result;
   }
 
-  const source_props = Object.keys(source);
+
   const result = collection.filter(compare);
+
 
   return result;
 }

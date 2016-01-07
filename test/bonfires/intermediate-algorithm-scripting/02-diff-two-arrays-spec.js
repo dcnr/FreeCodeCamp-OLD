@@ -1,27 +1,30 @@
 module.exports = function () {
-  var expect = require("chai")
+  'use strict';
+
+  const expect = require('chai')
     .expect;
 
-  var diff = require("./intermediate-algo-collection")
+  const diff = require('./intermediate-algo-collection')
     .diff;
 
-  var tests = require("./test-cases/02-test.js");
+  const tests = require('./test-cases/02-test.js');
 
-  describe("Diff Two Arrays", () => {
-    describe("diff()", () => {
-      it("should return an array", () => {
+  describe('Diff Two Arrays', function () {
+    describe('diff()', function () {
+      it('should return an array', function () {
         tests.forEach(test => {
-          var result = diff(...test.input);
+          const result = diff(...test.input);
 
           expect(result)
-            .to.be.an("array");
+            .to.be.an('array');
         });
       });
 
-      it("should return a new array with elements only " +
-        "found in the original arrays", () => {
+      it('should return a new array with elements only ' +
+        'found in the original arrays',
+        function () {
           tests.forEach(test => {
-            var result = diff(...test.input);
+            const result = diff(...test.input);
 
             expect(result)
               .to.include.members(test.expected);

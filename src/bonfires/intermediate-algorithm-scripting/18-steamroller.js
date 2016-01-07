@@ -9,8 +9,8 @@
 function steamroller(arr) {
   'use strict';
 
-  var result = [];
-  var clone = JSON.parse(JSON.stringify(arr));
+  let result = [];
+  const clone = JSON.parse(JSON.stringify(arr));
 
   clone.forEach(v => {
 

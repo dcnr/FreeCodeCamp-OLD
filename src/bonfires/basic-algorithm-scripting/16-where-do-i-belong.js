@@ -16,7 +16,14 @@
 
 
 function where(arr, num) {
-  return arr.filter(v => v < num).length;
+  'use strict';
+
+  const result = Array.prototype.concat(arr, num)
+    .sort((a, b) => a - b)
+    .indexOf(num);
+
+
+  return result;
 }
 
 

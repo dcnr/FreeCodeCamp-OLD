@@ -9,9 +9,10 @@
 
 
 function find(arr, func) {
-  var num = 0;
+  'use strict';
 
-  num = arr.find(v => func(v));
+  const num = arr.find(v => func(v));
+
 
   return num;
 }

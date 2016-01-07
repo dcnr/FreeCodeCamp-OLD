@@ -1,124 +1,124 @@
 module.exports = [
   { // case one
-    "input": [
+    input: [
       [
         {
-          first: "Romeo",
-          last: "Montague"
+          first: 'Romeo',
+          last: 'Montague'
         },
         {
-          first: "Mercutio",
+          first: 'Mercutio',
           last: null
         },
         {
-          first: "Tybalt",
-          last: "Capulet"
+          first: 'Tybalt',
+          last: 'Capulet'
         }
       ],
       {
-        last: "Capulet"
+        last: 'Capulet'
       }
     ],
-    "expected": [
+    expected: [
       {
-        first: "Tybalt",
-        last: "Capulet"
+        first: 'Tybalt',
+        last: 'Capulet'
       }
     ]
   }, // end case one
 
   { // case two
-    "input": [
+    input: [
       [
         {
-          "a": 1
+          'a': 1
         },
         {
-          "a": 1
+          'a': 1
         },
         {
-          "a": 1,
-          "b": 2
+          'a': 1,
+          'b': 2
         }
       ],
       {
-        "a": 1
+        'a': 1
       }
     ],
-    "expected": [
+    expected: [
       {
-        "a": 1
+        'a': 1
       },
       {
-        "a": 1
+        'a': 1
       },
       {
-        "a": 1,
-        "b": 2
+        'a': 1,
+        'b': 2
       }
     ]
   }, // end case two
 
   { // case three
-    "input": [
+    input: [
       [
         {
-          "a": 1,
-          "b": 2
+          'a': 1,
+          'b': 2
         },
         {
-          "a": 1
+          'a': 1
         },
         {
-          "a": 1,
-          "b": 2,
-          "c": 2
+          'a': 1,
+          'b': 2,
+          'c': 2
         }
       ],
       {
-        "a": 1,
-        "b": 2
+        'a': 1,
+        'b': 2
       }
     ],
-    "expected": [
+    expected: [
       {
-        "a": 1,
-        "b": 2
+        'a': 1,
+        'b': 2
       },
       {
-        "a": 1,
-        "b": 2,
-        "c": 2
+        'a': 1,
+        'b': 2,
+        'c': 2
       }
     ]
   }, // end case three
 
   { // case four
-    "input": [
+    input: [
       [
         {
-          "a": 1,
-          "b": 2
+          'a': 1,
+          'b': 2
         },
         {
-          "a": 1
+          'a': 1
         },
         {
-          "a": 1,
-          "b": 2,
-          "c": 2
+          'a': 1,
+          'b': 2,
+          'c': 2
         }
       ],
       {
-        "a": 1,
-        "c": 2
+        'a': 1,
+        'c': 2
       }
     ],
-    "expected": [
+    expected: [
       {
-        "a": 1,
-        "b": 2,
-        "c": 2
+        'a': 1,
+        'b': 2,
+        'c': 2
       }
     ]
   } // end case four

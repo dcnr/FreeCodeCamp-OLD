@@ -1,56 +1,58 @@
 module.exports = function () {
-  var expect = require("chai")
+  'use strict';
+
+  const expect = require('chai')
     .expect;
 
-  var end = require("./basic-algo-collection")
+  const end = require('./basic-algo-collection')
     .end;
 
-  var test_values = {
-    "true": [
+  const test_values = {
+    true: [
       {
-        "src": "Bastian",
-        "target": "n"
-    },
+        src: 'Bastian',
+        target: 'n'
+      },
       {
-        "src": "He has to give me a new name",
-        "target": "name"
-    },
+        src: 'He has to give me a new name',
+        target: 'name'
+      },
       {
-        "src": "He has to give me a new name",
-        "target": "me"
-    }
-  ],
+        src: 'He has to give me a new name',
+        target: 'me'
+      }
+    ],
 
-    "false": [
+    false: [
       {
-        "src": "Connor",
-        "target": "n"
-    },
+        src: 'Connor',
+        target: 'n'
+      },
       {
-        "src": "Walking on water and developing software from a " +
-          "specification are easy if both are frozen",
-        "target": "specification"
-    },
+        src: 'Walking on water and developing software from a ' +
+          'specification are easy if both are frozen',
+        target: 'specification'
+      },
       {
-        "src": "He has to give me a new name",
-        "target": "na"
-    },
+        src: 'He has to give me a new name',
+        target: 'na'
+      },
       {
-        "src": "If you want to save our world, you must hurry. " +
-          "We dont know how much longer we can withstand the nothing",
-        "target": "mountain"
-    }
-  ]
+        src: 'If you want to save our world, you must hurry. ' +
+          'We dont know how much longer we can withstand the nothing',
+        target: 'mountain'
+      }
+    ]
   };
 
 
-  describe("Confirm the Ending", () => {
-    describe("end()", () => {
-      it("should return a boolean", () => {
+  describe('Confirm the Ending', function () {
+    describe('end()', function () {
+      it('should return a boolean', function () {
         Object.keys(test_values)
           .forEach(key => {
             test_values[key].forEach(test => {
-              var result = end(test.src, test.target);
+              const result = end(test.src, test.target);
 
               expect(result)
                 .to.be.a('boolean');
@@ -59,18 +61,19 @@ module.exports = function () {
 
       });
 
-      it("should return true if input string ends with target string", () => {
-        Object.keys(test_values)
-          .forEach(key => {
-            test_values[key].forEach(test => {
-              var result = end(test.src, test.target);
+      it('should return true if input string ends with target string',
+        function () {
+          Object.keys(test_values)
+            .forEach(key => {
+              test_values[key].forEach(test => {
+                const result = end(test.src, test.target);
 
-              var answer = (key === 'true') ? true : false;
-              expect(result)
-                .to.be.equal(answer);
+                const answer = key === 'true' ? true : false;
+                expect(result)
+                  .to.be.equal(answer);
+              });
             });
-          });
-      });
+        });
     });
   });
 };

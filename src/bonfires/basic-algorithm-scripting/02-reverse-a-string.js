@@ -12,7 +12,10 @@
 
 
 function reverseString(str) {
-  return str.split('')
+  'use strict';
+
+  return str
+    .split('')
     .reverse()
     .join('');
 }

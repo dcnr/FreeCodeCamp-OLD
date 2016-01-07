@@ -20,6 +20,10 @@
 function pairwise(arr, arg) {
   'use strict';
 
+  arr = arr.slice();
+  const array_length = arr.length;
+  let indices = [];
+
   function checkPair(current_value, current_index) {
     for (let i = current_index + 1; i < array_length; ++i) {
       const paired_value = arr[i];
@@ -35,14 +39,10 @@ function pairwise(arr, arg) {
   }
 
 
-  arr = arr.slice();
-  const array_length = arr.length;
-
   if (!array_length) {
     return 0;
   }
 
-  let indices = [];
 
   for (let i = 0; i < array_length; ++i) {
     const current_value = arr[i];

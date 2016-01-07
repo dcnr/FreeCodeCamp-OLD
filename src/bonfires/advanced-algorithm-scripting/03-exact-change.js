@@ -7,8 +7,8 @@
  *
  * cid is a 2d array listing available currency.
  *
- * Return the string "Insufficient Funds" if cash-in-drawer is
- * less than the change due. Return the string "Closed"
+ * Return the string 'Insufficient Funds' if cash-in-drawer is
+ * less than the change due. Return the string 'Closed'
  * if cash-in-drawer is equal to the change due.
  *
  * Otherwise, return change in coin and bills, sorted in
@@ -65,6 +65,12 @@ function Cashier(cid) {
   })(cid);
 
 
+  let total_change = [];
+  const denomination = 0;
+  const pieces = 2;
+  const value = 3;
+
+
   this.getTotalCash = function () {
     return _drawer.TOTALCASH;
   };
@@ -86,14 +92,6 @@ function Cashier(cid) {
       return paid_out;
     }
 
-
-    let total_change = [];
-    const denomination = 0;
-    const amount = 1;
-    const pieces = 2;
-    const value = 3;
-
-
     // dole out cash starting from the highest value
     _drawer.cid.forEach(cash => {
       if (cash[value] <= change_needed && cash[pieces] > 0) {
@@ -109,7 +107,7 @@ function Cashier(cid) {
     });
 
     if (change_needed !== 0) {
-      return "Insufficient Funds";
+      return 'Insufficient Funds';
     }
 
 
@@ -126,11 +124,11 @@ function drawer(price, cash, cid) {
 
 
   if (change_needed > Alice.getTotalCash()) {
-    return "Insufficient Funds";
+    return 'Insufficient Funds';
   }
 
   if (change_needed === Alice.getTotalCash()) {
-    return "Closed";
+    return 'Closed';
   }
 
   const change = Alice.giveChange(change_needed);

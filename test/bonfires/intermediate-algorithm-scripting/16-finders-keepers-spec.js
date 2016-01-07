@@ -1,30 +1,32 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var find = require("./intermediate-algo-collection")
+  const find = require('./intermediate-algo-collection')
     .find;
 
-  var tests = require("./test-cases/16-test.js");
+  const tests = require('./test-cases/16-test.js');
 
-  describe("Finders Keepers", () => {
-    describe("find()", () => {
-      it("should return a number or undefined", () => {
+  describe('Finders Keepers', function () {
+    describe('find()', function () {
+      it('should return a number or undefined', function () {
         tests.forEach(test => {
           let result = find(...test.input);
 
           expect(result)
             .to.satisfy(result => {
-              if (typeof result === "number" || result === undefined)
+              if (typeof result === 'number' || result === undefined) {
                 return true;
+              }
             });
         });
       });
 
-      it("should returns the first element in the array that " +
-        "passes the given truth test", () => {
+      it('should returns the first element in the array that ' +
+        'passes the given truth test',
+        function () {
           tests.forEach(test => {
             let result = find(...test.input);
 

@@ -1,11 +1,13 @@
 module.exports = function () {
-  var expect = require("chai")
+  'use strict';
+
+  const expect = require('chai')
     .expect;
 
-  var slasher = require("./basic-algo-collection")
+  const slasher = require('./basic-algo-collection')
     .slasher;
 
-  var test_values = [
+  const test_values = [
     {
       input: {
         arr: [1, 2, 3],
@@ -37,21 +39,22 @@ module.exports = function () {
   ];
 
 
-  describe("Slasher Flick", () => {
-    describe("slasher()", () => {
-      it("should return an array", () => {
+  describe('Slasher Flick', function () {
+    describe('slasher()', function () {
+      it('should return an array', function () {
         test_values.forEach(test => {
-          var result = slasher(test.input.arr, test.input.howMany);
+          const result = slasher(test.input.arr, test.input.howMany);
 
           expect(result)
-            .to.be.an("array");
+            .to.be.an('array');
         });
       });
 
-      it("should return remaining elements of array after removing " +
-        "n elements from head", () => {
+      it('should return remaining elements of array after removing ' +
+        'n elements from head',
+        function () {
           test_values.forEach(test => {
-            var result = slasher(test.input.arr, test.input.howMany);
+            const result = slasher(test.input.arr, test.input.howMany);
 
             expect(result)
               .to.deep.equal(test.expected);

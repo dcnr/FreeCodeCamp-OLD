@@ -1,35 +1,37 @@
 module.exports = function () {
-  var expect = require("chai")
+  'use strict';
+
+  const expect = require('chai')
     .expect;
 
-  var convert = require("./intermediate-algo-collection")
+  const convert = require('./intermediate-algo-collection')
     .convert;
 
-  var test_cases = require("./test-cases/03-test");
+  const test_cases = require('./test-cases/03-test');
 
-  describe("Roman Numeral Converter", () => {
-    describe("convert()", () => {
-      it("should return a string", () => {
+  describe('Roman Numeral Converter', function () {
+    describe('convert()', function () {
+      it('should return a string', function () {
         test_cases.forEach(test => {
-          var result = convert(test.input);
+          const result = convert(test.input);
 
           expect(result)
-            .to.be.a("string");
+            .to.be.a('string');
         });
       });
 
-      it("should return the string values in upper case", () => {
+      it('should return the string values in upper case', function () {
         test_cases.forEach(test => {
-          var result = convert(test.input);
+          const result = convert(test.input);
 
           expect(result)
             .to.be.match(/[A-Z]/);
         });
       });
 
-      it("should convert given number to roman numeral", () => {
+      it('should convert given number to roman numeral', function () {
         test_cases.forEach(test => {
-          var result = convert(test.input);
+          const result = convert(test.input);
 
           expect(result)
             .to.be.equal(test.expected);

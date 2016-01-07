@@ -1,11 +1,13 @@
 module.exports = function () {
-  var expect = require("chai")
+  'use strict';
+
+  const expect = require('chai')
     .expect;
 
-  var where = require("./basic-algo-collection")
+  const where = require('./basic-algo-collection')
     .where;
 
-  var test_values = [
+  const test_values = [
     {
       input: [[40, 60], 50],
       expected: 1
@@ -38,22 +40,23 @@ module.exports = function () {
   ];
 
 
-  describe("Where do I belong", () => {
-    describe("where()", () => {
-      it("should return a number", () => {
+  describe('Where do I belong', function () {
+    describe('where()', function () {
+      it('should return a number', function () {
         test_values.forEach(test => {
-          var result = where(...test.input);
+          const result = where(...test.input);
 
 
           expect(result)
-            .to.be.a("number");
+            .to.be.a('number');
         });
       });
 
-      it("should return the index at which the given value " +
-        "should be inserted", () => {
+      it('should return the index at which the given value ' +
+        'should be inserted',
+        function () {
           test_values.forEach(test => {
-            var result = where(...test.input);
+            const result = where(...test.input);
 
             expect(result)
               .to.equal(test.expected);

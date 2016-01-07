@@ -16,11 +16,18 @@
 function sumFibs(num) {
   'use strict';
 
-  if (num === 1) return 1;
-  if (num < 1) return 0;
+  if (num === 1) {
+    return 1;
+  }
 
-  var result = 0;
-  var fib_seq = [1];
+  if (num < 1) {
+    return 0;
+  }
+
+
+  let result = 0;
+  let fib_seq = [1];
+
 
   for (let p = 0, c = 1, r = 1; r <= num; r = p + c) {
     p = c;
@@ -35,6 +42,7 @@ function sumFibs(num) {
 
     return p + 0;
   });
+
 
   return result;
 }

@@ -10,7 +10,7 @@
  * Return the provided character as the first element in each array.
  *
  * For example, for the input GCG,
- * return [["G", "C"], ["C","G"],["G", "C"]]
+ * return [['G', 'C'], ['C','G'],['G', 'C']]
  *
  * The character and its pair are paired up in an array, and all the
  * arrays are grouped into one encapsulating array.
@@ -21,28 +21,23 @@
 function pair(str) {
   'use strict';
 
-  var pairs = {
-    "A": "T",
-    "C": "G",
+  const getPairOf = (function () {
+    const table = {
+      A: 'T',
+      C: 'G',
+      T: 'A',
+      G: 'C'
+    };
 
-    getPair: function (base) {
-      for (let key in this) {
-        if (key === base) {
-          return this[key];
-        }
-
-        if (this[key] === base) {
-          return key;
-        }
-      }
-    } // end getPair
-  };
+    return function (base) {
+      return table[base];
+    };
+  })();
 
 
-  var result = [];
-  var sequence = str.split("");
+  let sequence = str.split('');
+  const result = sequence.map(base => [base, getPairOf(base)]);
 
-  result = sequence.map(base => [base, pairs.getPair(base)]);
 
   return result;
 }

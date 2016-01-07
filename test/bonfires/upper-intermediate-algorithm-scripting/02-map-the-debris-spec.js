@@ -1,46 +1,47 @@
 module.exports = function () {
   'use strict';
 
-  const expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  const orbitalPeriod = require("./upper-algo-collection")
+  const orbitalPeriod = require('./upper-algo-collection')
     .orbitalPeriod;
 
-  describe("Orbital Period", () => {
-    describe("orbitalPeriod()", () => {
-      it("should return an array", () => {
+  describe('Orbital Period', function () {
+    describe('orbitalPeriod()', function () {
+      it('should return an array', function () {
         const result = orbitalPeriod([{
-          name: "sputnik",
+          name: 'sputnik',
           avgAlt: 35873.5553
           }]);
 
         expect(result)
-          .to.be.an("array");
+          .to.be.an('array');
       });
 
-      it("should return an array of objects with their " +
-        "orbital period computed.", () => {
+      it('should return an array of objects with their ' +
+        'orbital period computed.',
+        function () {
           const result = orbitalPeriod([{
-            name: "iss",
+            name: 'iss',
             avgAlt: 413.6
             }, {
-            name: "hubble",
+            name: 'hubble',
             avgAlt: 556.7
             }, {
-            name: "moon",
+            name: 'moon',
             avgAlt: 378632.553
             }]);
 
           expect(result)
             .to.deep.equal([{
-              name: "iss",
+              name: 'iss',
               orbitalPeriod: 5557
               }, {
-              name: "hubble",
+              name: 'hubble',
               orbitalPeriod: 5734
               }, {
-              name: "moon",
+              name: 'moon',
               orbitalPeriod: 2377399
               }]);
         });

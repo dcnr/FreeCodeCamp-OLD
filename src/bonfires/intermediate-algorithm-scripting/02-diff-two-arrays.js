@@ -9,16 +9,25 @@
 
 function diff(arr1, arr2) {
   'use strict';
-  var newArray = Array.prototype.concat(...arguments)
+
+  const newArray = Array.prototype.concat(...arguments)
     .sort();
 
-  var result = [];
-  for (let i = 0; i < newArray.length; i++) {
-    if (newArray[i + 1] !== newArray[i])
-      result.push(newArray[i]);
-    else
-      i++;
+  let result = [];
+
+
+  for (let i = 0, len = newArray.length; i < len; i++) {
+    const current_item = newArray[i];
+    const next_item = newArray[i + 1];
+
+    if (current_item !== next_item) {
+      result.push(current_item);
+      continue;
+    }
+
+    i++;
   }
+
 
   return result;
 }

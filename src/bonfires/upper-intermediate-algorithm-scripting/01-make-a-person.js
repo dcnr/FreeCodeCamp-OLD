@@ -22,7 +22,9 @@
 
 
 function Person(firstAndLast) {
-  const first_last = firstAndLast.split(" ");
+  'use strict';
+
+  const first_last = firstAndLast.split(' ');
 
   this._first = first_last[0];
   this._last = first_last[1];
@@ -33,31 +35,43 @@ function Person(firstAndLast) {
   this._b = null;
   this._c = null;
   this._d = null;
-
 }
 
 Person.prototype.getFirstName = function () {
+  'use strict';
+
   return this._first;
 };
 
 Person.prototype.getLastName = function () {
+  'use strict';
+
   return this._last;
 };
 
 Person.prototype.getFullName = function () {
+  'use strict';
+
   return `${this._first} ${this._last}`;
 };
 
 Person.prototype.setFirstName = function (first_name) {
+  'use strict';
+
   this._first = first_name;
 };
 
 Person.prototype.setLastName = function (last_name) {
+  'use strict';
+
   this._last = last_name;
 };
 
 Person.prototype.setFullName = function (full_name) {
+  'use strict';
+
   Person.call(this, full_name);
 };
+
 
 module.exports = Person;

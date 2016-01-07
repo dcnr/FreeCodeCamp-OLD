@@ -11,6 +11,8 @@
 
 
 function slasher(arr, howMany) {
+  'use strict';
+
   return arr.slice(howMany);
 }
 

@@ -14,7 +14,7 @@ const BasicAlgorithms = {
   bouncer: require('./14-falsy-bouncer'),
   destroyer: require('./15-seek-and-destroy'),
   where: require('./16-where-do-i-belong'),
-  rot13: require('./17-ceasar-cipher')
+  rot13: require('./17-caesar-cipher')
 };
 
 

@@ -1,20 +1,24 @@
 module.exports = [
   {
-    "input": [
+    input: [
       [1, 3, 5, 8, 9, 10],
       function (num) {
+        'use strict';
+
         return num % 2 === 0;
       }
     ],
-    "expected": 8
+    expected: 8
   },
   {
-    "input": [
+    input: [
       [1, 3, 5, 9],
       function (num) {
+        'use strict';
+
         return num % 2 === 0;
       }
     ],
-    "expected": undefined
+    expected: undefined
   },
 ];

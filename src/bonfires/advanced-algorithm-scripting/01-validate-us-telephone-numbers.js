@@ -52,14 +52,14 @@ function telephoneCheck(str) {
 
 
   for (let i = re.length - 1; i >= 0; --i) {
-    if (re[i].test(str))
+    if (re[i].test(str)) {
       return true;
+    }
   }
 
 
   return false;
 }
-
 
 
 /* exports */

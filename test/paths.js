@@ -24,7 +24,7 @@ function setPath(type, filelist) {
       require(basic + '14-falsy-bouncer-spec'),
       require(basic + '15-seek-and-destroy-spec'),
       require(basic + '16-where-do-i-belong-spec'),
-      require(basic + '17-ceasar-cipher-spec')
+      require(basic + '17-caesar-cipher-spec')
    ];
 
    const intermediate_suite = [

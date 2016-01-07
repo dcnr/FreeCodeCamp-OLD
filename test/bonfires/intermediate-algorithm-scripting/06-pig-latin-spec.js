@@ -1,33 +1,34 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var translate = require("./intermediate-algo-collection")
+  const translate = require('./intermediate-algo-collection')
     .translate;
 
-  var tests = require("./test-cases/06-test");
+  const tests = require('./test-cases/06-test');
 
-  describe("Pig Latin", () => {
-    describe("translate()", () => {
-      it("should return a string", () => {
+  describe('Pig Latin', function () {
+    describe('translate()', function () {
+      it('should return a string', function () {
         tests.forEach(test => {
           let result = translate(test.input);
 
           expect(result)
-            .to.be.a("string");
+            .to.be.a('string');
         });
       });
 
-      it("should translate the provided string to pig latin", () => {
-        tests.forEach(test => {
-          let result = translate(test.input);
+      it('should translate the provided string to pig latin',
+        function () {
+          tests.forEach(test => {
+            let result = translate(test.input);
 
-          expect(result)
-            .to.be.equal(test.expected);
+            expect(result)
+              .to.be.equal(test.expected);
+          });
         });
-      });
     });
   });
 };

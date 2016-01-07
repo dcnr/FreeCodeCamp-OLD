@@ -1,26 +1,26 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var smallestCommons = require("./intermediate-algo-collection")
+  const smallestCommons = require('./intermediate-algo-collection')
     .smallestCommons;
 
-  var tests = require("./test-cases/15-test.js");
+  const tests = require('./test-cases/15-test.js');
 
-  describe("Smalles Common Multiple", () => {
-    describe("smallestCommons()", () => {
-      it("should return a numbers", () => {
+  describe('Smalles Common Multiple', function () {
+    describe('smallestCommons()', function () {
+      it('should return a numbers', function () {
         tests.forEach(test => {
           let result = smallestCommons(test.input);
 
           expect(result)
-            .to.be.a("number");
+            .to.be.a('number');
         });
       });
 
-      it("should return the smallest common multiple", () => {
+      it('should return the smallest common multiple', function () {
         tests.forEach(test => {
           let result = smallestCommons(test.input);
 

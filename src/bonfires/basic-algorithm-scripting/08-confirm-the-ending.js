@@ -9,6 +9,8 @@
 
 
 function end(str, target) {
+  'use strict';
+
   return str.slice(-target.length) === target;
 }
 

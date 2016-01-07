@@ -26,19 +26,22 @@ function sumPrimes(num) {
     for (let i = 2; i <= max; ++i) {
       let x = n / i;
 
-      if (parseInt(x, 10) === x)
+      if (parseInt(x, 10) === x) {
         return false;
+      }
     }
 
     return true;
   }
 
-  var result = 0;
+  let result = 0;
 
   for (let i = 2; i <= num; ++i) {
-    if (checkPrime(i))
+    if (checkPrime(i)) {
       result += i;
+    }
   }
+
 
   return result;
 }

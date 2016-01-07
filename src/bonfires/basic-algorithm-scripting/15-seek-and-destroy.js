@@ -14,17 +14,20 @@ function destroyer(arr) {
   'use strict';
 
   let args = [];
-  for (let i = 0, len = arguments.length; i < len; ++i) {
+  for (let i = 0; i < arguments.length; ++i) {
     args.push(arguments[i]);
   }
 
-  return arr.filter(val => {
+
+  arr = arr.filter(val => {
     if (~args.indexOf(val)) {
       return false;
     }
 
     return true;
   });
+
+  return arr;
 }
 
 

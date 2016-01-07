@@ -1,82 +1,86 @@
 module.exports = function () {
+  'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var truncate = require("./basic-algo-collection")
+  const truncate = require('./basic-algo-collection')
     .truncate;
 
-  var test_values = [
+  const test_values = [
     {
       input: {
-        src: "A-tisket a-tasket A green and yellow basket",
+        src: 'A-tisket a-tasket A green and yellow basket',
         num: 11
       },
-      expected: "A-tisket..."
+      expected: 'A-tisket...'
     },
     {
       input: {
-        src: "Peter Piper picked a peck of pickled peppers",
+        src: 'Peter Piper picked a peck of pickled peppers',
         num: 14
       },
-      expected: "Peter Piper..."
+      expected: 'Peter Piper...'
     },
     {
       input: {
-        src: "A-tisket a-tasket A green and yellow basket",
-        num: "A-tisket a-tasket A green and yellow basket".length
+        src: 'A-tisket a-tasket A green and yellow basket',
+        num: 'A-tisket a-tasket A green and yellow basket'.length
       },
-      expected: "A-tisket a-tasket A green and yellow basket"
+      expected: 'A-tisket a-tasket A green and yellow basket'
     },
     {
       input: {
-        src: "A-tisket a-tasket A green and yellow basket",
-        num: "A-tisket a-tasket A green and yellow basket".length + 2
+        src: 'A-tisket a-tasket A green and yellow basket',
+        num: 'A-tisket a-tasket A green and yellow basket'.length + 2
       },
-      expected: "A-tisket a-tasket A green and yellow basket"
+      expected: 'A-tisket a-tasket A green and yellow basket'
     },
     {
       input: {
-        src: "A-",
+        src: 'A-',
         num: 1
       },
-      expected: "A..."
+      expected: 'A...'
     },
     {
       input: {
-        src: "Absolutely Longer",
+        src: 'Absolutely Longer',
         num: 2
       },
-      expected: "Ab..."
+      expected: 'Ab...'
     }
   ];
 
-  describe("Truncate a String", () => {
-    describe("truncate()", () => {
-      it("should return a string", () => {
+  describe('Truncate a String', function () {
+    describe('truncate()', function () {
+      it('should return a string', function () {
         test_values.forEach(test => {
-          var result = truncate(test.input.src, test.input.num);
+          const result = truncate(test.input.src, test.input.num);
 
           expect(result)
             .to.be.a('string');
         });
       });
 
-      it("should truncate input if it's longer than num specified", () => {
-        test_values.forEach(test => {
-          var result = truncate(test.input.src, test.input.num);
+      it("should truncate input if it's longer than num specified",
+        function () {
+          test_values.forEach(test => {
+            const result = truncate(test.input.src, test.input.num);
 
-          expect(result)
-            .to.be.equal(test.expected);
+            expect(result)
+              .to.be.equal(test.expected);
+          });
         });
-      });
 
       it("should not add the '...' if num string is less " +
-        "than or equal to 3", () => {
-          var result = truncate(test_values[4].input.src,
+        'than or equal to 3',
+        function () {
+          const result = truncate(test_values[4].input.src,
             test_values[4].input.num);
 
-          expect(result).to.be.equal(test_values[4].expected);
+          expect(result)
+            .to.be.equal(test_values[4].expected);
         });
     });
   });

@@ -9,14 +9,17 @@
 
 
 function repeat(str, num) {
-  if (num < 0)
-    return "";
+  'use strict';
 
-  var result = '';
+  let result = '';
 
-  while (num--) {
-    result += str;
+
+  if (num > 0) {
+    while (num--) {
+      result += str;
+    }
   }
+
 
   return result;
 }

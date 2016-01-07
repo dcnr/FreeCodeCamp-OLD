@@ -9,14 +9,15 @@
 
 
 function binaryAgent(str) {
+  'use strict';
 
-  return str.split(" ")
-    .map(v =>
-      String.fromCharCode(
-        parseInt(v, 2)
-      )
-    )
-    .join("");
+  const sentence = str
+    .split(' ')
+    .map(v => String.fromCharCode(parseInt(v, 2)))
+    .join('');
+
+
+  return sentence;
 }
 
 

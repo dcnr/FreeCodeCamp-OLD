@@ -1,22 +1,22 @@
 module.exports = [
   {
-    "input": "california",
-    "expected": "aliforniacay"
+    input: 'california',
+    expected: 'aliforniacay'
   },
   {
-    "input": "paragraphs",
-    "expected": "aragraphspay"
+    input: 'paragraphs',
+    expected: 'aragraphspay'
   },
   {
-    "input": "glove",
-    "expected": "oveglay"
+    input: 'glove',
+    expected: 'oveglay'
   },
   {
-    "input": "algorithm",
-    "expected": "algorithmway"
+    input: 'algorithm',
+    expected: 'algorithmway'
   },
   {
-    "input": "eight",
-    "expected": "eightway"
+    input: 'eight',
+    expected: 'eightway'
   }
 ];

@@ -1,27 +1,28 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var convertHTML = require("./intermediate-algo-collection")
+  const convertHTML = require('./intermediate-algo-collection')
     .convertHTML;
 
-  var tests = require("./test-cases/11-test.js");
+  const tests = require('./test-cases/11-test.js');
 
-  describe("Convert HTML Entities", () => {
-    describe("convert()", () => {
-      it("should return a string", () => {
+  describe('Convert HTML Entities', function () {
+    describe('convert()', function () {
+      it('should return a string', function () {
         tests.forEach(test => {
           let result = convertHTML(test.input);
 
           expect(result)
-            .to.be.a("string");
+            .to.be.a('string');
         });
       });
 
-      it("should convert HTML entities to their escaped " +
-        "values.", () => {
+      it('should convert HTML entities to their escaped ' +
+        'values.',
+        function () {
           tests.forEach(test => {
             let result = convertHTML(test.input);
 

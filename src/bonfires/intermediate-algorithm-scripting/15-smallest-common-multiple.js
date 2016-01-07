@@ -25,6 +25,7 @@ function smallestCommons(arr) {
       range.push(step);
     }
 
+
     return range;
   }
 
@@ -39,7 +40,7 @@ function smallestCommons(arr) {
       a = tmp;
     }
 
-    var r = a;
+    let r = a;
     while (true) {
       if (step(a, b) === 0) {
         return r;
@@ -59,8 +60,8 @@ function smallestCommons(arr) {
 
   arr.sort((a, b) => a - b);
 
-  var result = 0;
-  var range = makeRange(arr);
+  let result = 0;
+  const range = makeRange(arr);
 
   result = range.reduce((p, c) => lcm(p, c));
 

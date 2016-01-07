@@ -8,9 +8,9 @@
 
 
 function every(collection, pre) {
-  var result = true;
+  'use strict';
 
-  result = collection.every(v => {
+  const result = collection.every(v => {
     if (v.hasOwnProperty(pre)) {
       return Boolean(v[pre]);
     }

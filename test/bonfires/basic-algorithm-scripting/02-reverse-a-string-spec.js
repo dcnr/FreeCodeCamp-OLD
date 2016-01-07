@@ -1,27 +1,28 @@
 module.exports = function () {
-  var expect = require("chai")
+  'use strict';
+
+  const expect = require('chai')
     .expect;
 
-  var reverseString = require("./basic-algo-collection")
+  const reverseString = require('./basic-algo-collection')
     .reverseString;
 
 
-  describe("Reverse String", function () {
-    describe("reverseString()", function () {
-      it("should return a string", function () {
-        var args = "hello";
-        var results = reverseString(args);
+  describe('Reverse String', function () {
+    describe('reverseString()', function () {
+      it('should return a string', function () {
+        const args = 'hello';
+        const results = reverseString(args);
 
         expect(results)
           .to.be.a('string');
       });
 
-      it("should reverse input string", function () {
-        var args = ["hello", "Howdy", "Greetings from Earth"];
-        var answer = ["olleh", "ydwoH", "htraE morf sgniteerG"];
-        var results = [];
+      it('should reverse input string', function () {
+        const args = ['hello', 'Howdy', 'Greetings from Earth'];
+        const answer = ['olleh', 'ydwoH', 'htraE morf sgniteerG'];
 
-        results = args.map(
+        const results = args.map(
           val => reverseString(val)
         );
 
@@ -33,5 +34,4 @@ module.exports = function () {
       });
     });
   });
-
 };

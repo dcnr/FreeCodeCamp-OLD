@@ -1,26 +1,26 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var binaryAgent = require("./intermediate-algo-collection")
+  const binaryAgent = require('./intermediate-algo-collection')
     .binaryAgent;
 
-  var tests = require("./test-cases/19-test.js");
+  const tests = require('./test-cases/19-test.js');
 
-  describe("Binary Agents", () => {
-    describe("binaryAgent()", () => {
-      it("should return a string", () => {
+  describe('Binary Agents', function () {
+    describe('binaryAgent()', function () {
+      it('should return a string', function () {
         tests.forEach(test => {
           let result = binaryAgent(test.input);
 
           expect(result)
-            .to.be.a("string");
+            .to.be.a('string');
         });
       });
 
-      it("should convert binary string to alphabet", () => {
+      it('should convert binary string to alphabet', function () {
         tests.forEach(test => {
           let result = binaryAgent(test.input);
 

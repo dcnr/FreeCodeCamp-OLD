@@ -12,8 +12,8 @@
  * with (after).
  *
  * NOTE: Preserve the case of the original word when you are replacing it.
- * For example if you mean to replace the word "Book" with the word "dog",
- * it should be replaced as "Dog"
+ * For example if you mean to replace the word 'Book' with the word 'dog',
+ * it should be replaced as 'Dog'
  *
  */
 
@@ -25,16 +25,22 @@ function myReplace(str, before, after) {
     const first_char = matched.charAt(0);
 
     if (/[A-Z]/.test(first_char)) {
-      const new_word = after.charAt(0)
-        .toUpperCase() + after.substr(1);
+      const first_letter = after
+        .charAt(0)
+        .toUpperCase();
 
-      return new_word;
+      const rest_of_word = after.substr(1);
+
+      return first_letter + rest_of_word;
     }
+
 
     return after;
   }
 
+
   const result = str.replace(before, replacement);
+
 
   return result;
 }

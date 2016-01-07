@@ -1,33 +1,34 @@
 module.exports = function () {
   'use strict';
 
-  var expect = require("chai")
+  const expect = require('chai')
     .expect;
 
-  var sumPrimes = require("./intermediate-algo-collection")
+  const sumPrimes = require('./intermediate-algo-collection')
     .sumPrimes;
 
-  var tests = require("./test-cases/14-test.js");
+  const tests = require('./test-cases/14-test.js');
 
-  describe("Sum All Primes", () => {
-    describe("sumPrimes()", () => {
-      it("should return a number", () => {
+  describe('Sum All Primes', function () {
+    describe('sumPrimes()', function () {
+      it('should return a number', function () {
         tests.forEach(test => {
           let result = sumPrimes(test.input);
 
           expect(result)
-            .to.be.a("number");
+            .to.be.a('number');
         });
       });
 
-      it("should return the sum of all primes up to given number", () => {
-        tests.forEach(test => {
-          let result = sumPrimes(test.input);
+      it('should return the sum of all primes up to given number',
+        function () {
+          tests.forEach(test => {
+            let result = sumPrimes(test.input);
 
-          expect(result)
-            .to.equal(test.expected);
+            expect(result)
+              .to.equal(test.expected);
+          });
         });
-      });
     });
   });
 };

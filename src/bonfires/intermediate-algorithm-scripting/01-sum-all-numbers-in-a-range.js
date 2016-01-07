@@ -19,8 +19,10 @@ function sumAll(arr) {
     .fill(0);
 
   let i = arr[0];
-  const result = range.map(v => v = i++)
+  const result = range
+    .map(v => v = i++)
     .reduce((a, b) => a + b);
+
 
   return result;
 }

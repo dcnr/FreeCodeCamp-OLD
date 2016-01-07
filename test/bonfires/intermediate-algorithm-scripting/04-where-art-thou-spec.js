@@ -1,27 +1,30 @@
 module.exports = function () {
-  var expect = require("chai")
+  'use strict';
+
+  const expect = require('chai')
     .expect;
 
-  var where = require("./intermediate-algo-collection")
+  const where = require('./intermediate-algo-collection')
     .where;
 
-  var tests = require("./test-cases/04-test");
+  const tests = require('./test-cases/04-test');
 
-  describe("Where Art Though", () => {
-    describe("where()", () => {
-      it("should return an array", () => {
+  describe('Where Art Though', function () {
+    describe('where()', function () {
+      it('should return an array', function () {
         tests.forEach(test => {
-          var result = where(...test.input);
+          const result = where(...test.input);
 
           expect(result)
-            .to.be.an("array");
+            .to.be.an('array');
         });
       });
 
-      it("should return an array containing objects that has " +
-        "matching property from source", () => {
+      it('should return an array containing objects that has ' +
+        'matching property from source',
+        function () {
           tests.forEach(test => {
-            var result = where(...test.input);
+            const result = where(...test.input);
 
             expect(result)
               .to.deep.include.members(test.expected);

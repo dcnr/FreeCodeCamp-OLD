@@ -1,2 +1,2 @@
-module.exports = require("../../../src/bonfires/" +
-  "basic-algorithm-scripting");
+module.exports = require('../../../src/bonfires/' +
+  'basic-algorithm-scripting');

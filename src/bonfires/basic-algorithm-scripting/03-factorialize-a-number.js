@@ -15,13 +15,15 @@
 
 
 function factorialize(num, acc) {
-  if (acc === undefined) {
-    acc = 1;
-  }
+  'use strict';
+
+  acc = acc || 1;
+
 
   if (1 === num || 0 === num) {
     return acc;
   }
+
 
   return factorialize(num - 1, acc * num);
 }
