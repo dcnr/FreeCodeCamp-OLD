@@ -37,7 +37,7 @@ This is my repository for my solutions to the program exercises from the Camp. I
 
 >15. [Where do I Belong](https://github.com/dcnr/FreeCodeCamp/blob/master/src/bonfires/basic-algorithm-scripting/16-where-do-i-belong.js)
 
->16. [Ceasar's Cipher](https://github.com/dcnr/FreeCodeCamp/blob/master/src/bonfires/basic-algorithm-scripting/17-ceasar-cipher.js)
+>16. [Ceasar's Cipher](https://github.com/dcnr/FreeCodeCamp/blob/master/src/bonfires/basic-algorithm-scripting/17-caesar-cipher.js)
 
 ###### [Intermediate Algorithm Scripting](https://github.com/dcnr/FreeCodeCamp/tree/master/src/bonfires/intermediate-algorithm-scripting)
 
