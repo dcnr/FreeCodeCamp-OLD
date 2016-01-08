@@ -1,4 +1,4 @@
-/* Bonfire: Steamroller
+/* Bonfire=> Steamroller
  * http://www.freecodecamp.com/challenges/bonfire-steamroller
  *
  * Flatten a nested array. You must account for varying levels of nesting.
@@ -9,34 +9,57 @@
 function steamroller(arr) {
   'use strict';
 
-  let result = [];
-  const clone = JSON.parse(JSON.stringify(arr));
+  const result = [];
 
-  clone.forEach(v => {
-
-    if (v instanceof Array) {
-      let tmp;
-
-      while (v instanceof Array && v.length) {
-        tmp = v.shift();
-
-        if (tmp instanceof Array) {
-          if (tmp.length === 1 && !(tmp[0] instanceof Array)) {
-            result.push(tmp[0]);
-            break;
-          }
-
-          v = tmp;
-        } else {
-          result.push(tmp);
-        }
-      }
-
+  /****************** HELPERS ******************/
+  function flatten(r, v) {
+    if (Array.isArray(v)) {
+      r.push(v.toString());
     }
     else {
-      result.push(v);
+      r.push(v);
     }
-  });
+
+    return r;
+  }
+
+
+  function parse(v) {
+    if (typeof v !== 'string') {
+      return v;
+    }
+
+    if (v.length === 1 && parseInt(v, 10)) {
+      return parseInt(v, 10);
+    }
+
+    return v;
+  }
+
+
+  function separate(value) {
+    if (typeof value !== 'string' || value.length === 1) {
+      result.push(value);
+    }
+    else {
+      value
+        .split(',')
+        .map(v => {
+          return parseInt(v, 10);
+        })
+        .forEach(v => {
+          result.push(v);
+        });
+    }
+  }
+  /*********************************************/
+
+
+  arr = arr
+    .reduce(flatten, [])
+    .filter(v => v)
+    .map(parse)
+    .forEach(separate);
 
 
   return result;
@@ -45,3 +68,21 @@ function steamroller(arr) {
 
 /* exports */
 module.exports = steamroller;
+
+
+/* module is directly ran */
+if (require.main === module) {
+  console.log('Steamroller\n  Flatten nested array.\n');
+  console.log(
+    "\t[[['a']], [['b']]]\t=>\t", steamroller([[['a']], [['b']]])
+  );
+  console.log(
+    '\t[1, {}, [3, [[4]]]\t=>\t', steamroller([1, {}, [3, [[4]]]])
+  );
+  console.log(
+    '\t[1, [], [3, [[4]]]]\t=>\t', steamroller([1, [], [3, [[4]]]])
+  );
+  console.log(
+    '\t[1, [2], [3, [[4]]]]\t=>\t', steamroller([1, [2], [3, [[4]]]])
+  );
+}
