@@ -26,7 +26,7 @@ module.exports = function () {
             const result = sym(...test.input);
 
             expect(result)
-              .to.include.members(test.expected);
+              .to.deep.include.members(test.expected);
           });
         });
     });
