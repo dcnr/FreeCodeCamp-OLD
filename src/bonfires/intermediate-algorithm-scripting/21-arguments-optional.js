@@ -16,40 +16,83 @@
  * sumTwoAnd(3) returns 5.
  *
  * If either argument isn't a valid number, return undefined.
- *
  */
 
 
 function add() {
   'use strict';
-  var result = 0;
 
-  if (arguments.length > 1) {
-    for (let i = 0, len = arguments.length; i < len; ++i) {
-      if (typeof arguments[i] !== "number")
-        return undefined;
-
-      result += arguments[i];
+  function isNum(n) {
+    if (typeof n === 'number') {
+      return true;
     }
 
+    return false;
+  }
+
+
+  const args = new Array(arguments.length);
+  for (let i = 0, len = arguments.length; i < len; ++i) {
+    args[i] = arguments[i];
+  }
+
+
+  if (!args.every(isNum)) {
+    return undefined;
+  }
+
+
+  const result = args[0] + args[1];
+  if (!Number.isNaN(result)) {
     return result;
   }
 
-  if (typeof arguments[0] !== "number")
-    return undefined;
 
-
-  let y = arguments[0];
-  result = function(x) {
-    if (typeof x !== "number")
+  const x = args[0];
+  
+  return function (y) {
+    if (!isNum(y)) {
       return undefined;
+    }
 
     return x + y;
   };
-
-  return result;
 }
 
 
 /* exports */
 module.exports = add;
+
+
+/* module is ran directly */
+if (require.main === module) {
+  console.log(
+    `
+Arguments Optional
+
+  Sum two arguments together.
+  If an argument is not a number, return undefined.
+  If only one argument is supplied, return a function
+    that expects an argument and return the sum.\n`
+  );
+
+  console.log(
+    '\tadd(2, 3)\t\t\t=>\t', add(2, 3)
+  );
+
+  console.log(
+    "\tadd('http://bit.ly/IqT6zt')\t=>\t", add('http://bit.ly/IqT6zt')
+  );
+
+  console.log(
+    "\tadd(2, '3')\t\t\t=>\t", add(2, '3')
+  );
+
+  console.log(
+    '\tadd(2)([3])\t\t\t=>\t', add(2)([3])
+  );
+
+  console.log(
+    '\tadd(2)(3)\t\t\t=>\t', add(2)(3)
+  );
+}
