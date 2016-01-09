@@ -19,33 +19,47 @@
 function rot13(encodedStr) {
   'use strict';
 
-  let codeArr = encodedStr.split(""); // String to Array
-  let decodedArr = []; // Your Result goes here
-  // Only change code below this line
+  const alphabet = Array
+    .apply(null, new Array(26))
+    .map((v, i) => String.fromCharCode(i + 65));
 
-  decodedArr = codeArr.map(char => {
-    let charCode = String.prototype.charCodeAt.call(char);
 
-    if (charCode < 65 || charCode > 90) {
-      return char;
-    }
+  /* jshint -W014 */
+  const decodedStr = encodedStr
+    .split('')
+    .map(char =>
+      !~alphabet.indexOf(char)
+        ? char
+        : alphabet[(alphabet.indexOf(char) + 13) % 26])
+    .join('');
 
-    if (charCode + 13 > 90) {
-      return String.fromCharCode(charCode - 13);
-    }
 
-    return String.fromCharCode(charCode + 13);
-  });
-
-  // Only change code above this line
-  return decodedArr.join(""); // Array to String
+  return decodedStr;
 }
 
 
-if (require.main === module) {
-  // Change the inputs below to test
-  console.log(rot13("SERR PBQR PNZC"));
-}
-
-
+/* exports */
 module.exports = rot13;
+
+
+/* module ran directly */
+if (require.main === module) {
+  console.log(
+    `
+Caesar's Cipher\n
+  Return the decoded ROT13 encrypted string.\n`
+  );
+
+  console.log(
+    '\tSERR PBQR PNZC\t\t=>\t', rot13('SERR PBQR PNZC')
+  );
+
+  console.log(
+    '\tSERR CVMMN!\t\t=>\t', rot13('SERR CVMMN!')
+  );
+
+  console.log(
+    '\tGUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.\n\t=>\t',
+    rot13('GUR DHVPX OEBJA QBT WHZCRQ BIRE GUR YNML SBK.')
+  );
+}
