@@ -63,6 +63,7 @@ function setPath(type, filelist) {
       require(advanced + '03-exact-change-spec'),
       require(advanced + '04-inventory-update-spec'),
       require(advanced + '05-no-repeats-please-spec'),
+      require(advanced + '06-friendly-date-ranges-spec')
    ];
 
 
