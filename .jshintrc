@@ -8,11 +8,15 @@
   "forin": true,
   "freeze": true,
   "latedef": true,
+  "maxcomplexity": 4,
   "maxdepth": 2,
+  "maxparams": 3,
+  "maxstatements": 8,
   "nonew": true,
-  "notypeof": true,
   "singleGroups": true,
   "undef": true,
   "unused": true,
-  "varstmt": true
+  "varstmt": true,
+  "shadow": "outer",
+  "futurehostile": true
 }
