@@ -100,3 +100,5 @@ This is my repository for my solutions to the program exercises from the Camp. I
 >3. [Exact Change](https://github.com/dcnr/FreeCodeCamp/blob/master/src/bonfires/advanced-algorithm-scripting/03-exact-change.js)
 
 >4. [Inventory Update](https://github.com/dcnr/FreeCodeCamp/blob/master/src/bonfires/advanced-algorithm-scripting/04-inventory-update.js)
+
+>5. [Friendly Date Ranges](https://github.com/dcnr/FreeCodeCamp/blob/master/src/bonfires/advanced-algorithm-scripting/06-friendly-date-ranges.js)
