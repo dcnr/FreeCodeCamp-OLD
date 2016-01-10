@@ -39,29 +39,15 @@ function where(collection, source) {
   'use strict';
 
   function compare(obj) {
-    const result = Object
+    return Object
       .keys(source)
-      .every(prop => {
-        if (obj.hasOwnProperty(prop)) {
-          if (obj[prop] !== source[prop]) {
-            return false; // have prop but does not match
-          }
-
-          return true; // all properties matched
-        }
-
-        return false; // obj does not have property
-      });
-
-
-    return result;
+      .every(prop =>
+        obj.hasOwnProperty && obj[prop] === source[prop]
+      );
   }
 
 
-  const result = collection.filter(compare);
-
-
-  return result;
+  return collection.filter(compare);
 }
 
 
