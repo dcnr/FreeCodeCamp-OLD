@@ -14,18 +14,15 @@
 function translate(str) {
   'use strict';
 
-  let result = str + 'way';
   const re = new RegExp('^([^aeiou]+)', 'i');
 
-
-  if (re.test(str)) {
-    result = str
-      .split(re)
-      .reverse()
-      .join('');
-
-    result += 'ay';
-  }
+  /* jshint -W014 */
+  const result = re.test(str)
+    ? str
+        .split(re)
+        .reverse()
+        .join('') + 'ay'
+    : str + 'way';
 
   return result;
 }
