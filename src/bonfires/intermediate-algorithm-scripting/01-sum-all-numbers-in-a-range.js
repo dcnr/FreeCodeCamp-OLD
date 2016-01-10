@@ -15,12 +15,9 @@ function sumAll(arr) {
 
   arr.sort((a, b) => a - b);
 
-  let range = new Array(arr[1] - arr[0] + 1)
-    .fill(0);
-
-  let i = arr[0];
-  const result = range
-    .map(v => v = i++)
+  const result = Array
+    .apply(null, new Array(arr[1] - arr[0] + 1))
+    .map((v, i) => i + arr[0])
     .reduce((a, b) => a + b);
 
 
