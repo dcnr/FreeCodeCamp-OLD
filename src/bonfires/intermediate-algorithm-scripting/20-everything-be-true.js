@@ -10,13 +10,9 @@
 function every(collection, pre) {
   'use strict';
 
-  const result = collection.every(v => {
-    if (v.hasOwnProperty(pre)) {
-      return Boolean(v[pre]);
-    }
-
-    return false;
-  });
+  const result = collection.every(v =>
+    v.hasOwnProperty(pre) && v[pre]
+  );
 
   return result;
 }
