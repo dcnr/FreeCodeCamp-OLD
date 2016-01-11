@@ -25,11 +25,9 @@ function palindrome(str) {
     .toLowerCase();
 
   const reversed = str
-    .replace(/[_\W]/g, '')
     .split('')
     .reverse()
-    .join('')
-    .toLowerCase();
+    .join('');
 
 
   return str === reversed;
