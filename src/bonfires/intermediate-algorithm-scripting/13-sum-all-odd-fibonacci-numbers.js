@@ -12,6 +12,22 @@
  *
  */
 
+function fib(max, acc) {
+  'use strict';
+
+  acc = acc || [1, 1];
+  const last = acc.length - 1;
+
+  if (acc[last] > max) {
+    acc.pop();
+    return acc;
+  }
+
+  acc.push(acc[last - 1] + acc[last]);
+
+  return fib(max, acc);
+}
+
 
 function sumFibs(num) {
   'use strict';
@@ -25,23 +41,14 @@ function sumFibs(num) {
   }
 
 
-  let result = 0;
-  let fib_seq = [1];
+  const result = fib(num)
+    .reduce((p, c) => {
+      if (c % 2 !== 0) {
+        return p + c;
+      }
 
-
-  for (let p = 0, c = 1, r = 1; r <= num; r = p + c) {
-    p = c;
-    c = r;
-    fib_seq.push(r);
-  }
-
-  result = fib_seq.reduce((p, c) => {
-    if (c % 2 !== 0) {
-      return p + c;
-    }
-
-    return p + 0;
-  });
+      return p;
+    });
 
 
   return result;
@@ -50,3 +57,39 @@ function sumFibs(num) {
 
 /* exports */
 module.exports = sumFibs;
+
+
+/* module ran directly */
+if (require.main === module) {
+  console.log(
+    `
+Sum All Odd Fibonacci Numbers\n
+  Return the sum of all odd Fibonacci numbers up to
+  and including the given number if it is a part of
+  the sequence.\n`
+  );
+
+  console.log(
+    '\tsumFibs(1)\t\t=>\t', sumFibs(1)
+  );
+
+  console.log(
+    '\tsumFibs(1000)\t\t=>\t', sumFibs(1000)
+  );
+
+  console.log(
+    '\tsumFibs(4000000)\t=>\t', sumFibs(4000000)
+  );
+
+  console.log(
+    '\tsumFibs(4)\t\t=>\t', sumFibs(4)
+  );
+
+  console.log(
+    '\tsumFibs(75024)\t\t=>\t', sumFibs(75024)
+  );
+
+  console.log(
+    '\tsumFibs(75025)\t\t=>\t', sumFibs(75025)
+  );
+}
