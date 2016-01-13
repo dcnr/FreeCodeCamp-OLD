@@ -10,11 +10,7 @@
 function every(collection, pre) {
   'use strict';
 
-  const result = collection.every(v =>
-    v.hasOwnProperty(pre) && v[pre]
-  );
-
-  return result;
+  return collection.every(v => v[pre]);
 }
 
 
