@@ -83,10 +83,6 @@ This is my repository for my solutions to the program exercises from the Camp. I
 
 >21. [Arguments Optional](https://github.com/dcnr/FreeCodeCamp/blob/master/src/challenges/intermediate-algorithm-scripting/21-arguments-optional.js)
 
-###### [Upper Intermediate Algorithm Scripting](https://github.com/dcnr/FreeCodeCamp/tree/master/src/challenges/advanced-algorithm-scripting)
-
-
-
 ###### [Advanced Algorithm Scripting](https://github.com/dcnr/FreeCodeCamp/tree/master/src/challenges/advanced-algorithm-scripting)
 
 >1. [Validate US Telephone Numbers](https://github.com/dcnr/FreeCodeCamp/blob/master/src/challenges/advanced-algorithm-scripting/01-validate-us-telephone-numbers.js)
