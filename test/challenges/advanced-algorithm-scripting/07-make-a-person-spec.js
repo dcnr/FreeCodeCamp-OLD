@@ -4,7 +4,7 @@ module.exports = function () {
   const expect = require('chai')
     .expect;
 
-  const Person = require('./upper-algo-collection')
+  const Person = require('./advanced-algo-collection')
     .Person;
 
   describe('Make a Person', function () {

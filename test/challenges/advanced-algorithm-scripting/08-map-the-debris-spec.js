@@ -4,7 +4,7 @@ module.exports = function () {
   const expect = require('chai')
     .expect;
 
-  const orbitalPeriod = require('./upper-algo-collection')
+  const orbitalPeriod = require('./advanced-algo-collection')
     .orbitalPeriod;
 
   describe('Orbital Period', function () {

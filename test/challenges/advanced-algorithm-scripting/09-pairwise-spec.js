@@ -4,7 +4,7 @@ module.exports = function () {
   const expect = require('chai')
     .expect;
 
-  const pairwise = require('./upper-algo-collection')
+  const pairwise = require('./advanced-algo-collection')
     .pairwise;
 
   const tests = [

@@ -1,10 +1,9 @@
 function setPath(type, filelist) {
    'use strict';
 
-   const basic = './bonfires/basic-algorithm-scripting/';
-   const intermediate = './bonfires/intermediate-algorithm-scripting/';
-   const upper = './bonfires/upper-intermediate-algorithm-scripting/';
-   const advanced = './bonfires/advanced-algorithm-scripting/';
+   const basic = './challenges/basic-algorithm-scripting/';
+   const intermediate = './challenges/intermediate-algorithm-scripting/';
+   const advanced = './challenges/advanced-algorithm-scripting/';
 
    /********************** FILE LIST **********************/
    const basic_suite = [
@@ -51,11 +50,6 @@ function setPath(type, filelist) {
       require(intermediate + '21-arguments-optional-spec')
    ];
 
-   const upper_suite = [
-      require(upper + '01-make-a-person-spec'),
-      require(upper + '02-map-the-debris-spec'),
-      require(upper + '03-pairwise-spec')
-   ];
 
    const advanced_suite = [
       require(advanced + '01-validate-us-telephone-numbers-spec'),
@@ -63,7 +57,10 @@ function setPath(type, filelist) {
       require(advanced + '03-exact-change-spec'),
       require(advanced + '04-inventory-update-spec'),
       require(advanced + '05-no-repeats-please-spec'),
-      require(advanced + '06-friendly-date-ranges-spec')
+      require(advanced + '06-friendly-date-ranges-spec'),
+      require(advanced + '07-make-a-person-spec'),
+      require(advanced + '08-map-the-debris-spec'),
+      require(advanced + '09-pairwise-spec')
    ];
 
 
@@ -72,8 +69,7 @@ function setPath(type, filelist) {
 
    if (type === 'all') {
       tests = Array.prototype.concat(
-         basic_suite, intermediate_suite,
-         upper_suite, advanced_suite
+         basic_suite, intermediate_suite, advanced_suite
       );
 
       return tests;
@@ -89,18 +85,13 @@ function setPath(type, filelist) {
          suite = intermediate_suite;
          break;
 
-      case 'upper':
-         suite = upper_suite;
-         break;
-
       case 'advanced':
          suite = advanced_suite;
          break;
 
       default:
          suite = Array.prototype.concat(
-            basic_suite, intermediate_suite,
-            upper_suite, advanced_suite
+            basic_suite, intermediate_suite, advanced_suite
          );
    }
 
