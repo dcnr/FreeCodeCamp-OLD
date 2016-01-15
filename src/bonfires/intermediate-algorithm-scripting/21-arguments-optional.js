@@ -19,44 +19,39 @@
  */
 
 
+function isNum(v) {
+  'use strict';
+
+  return typeof v === 'number';
+}
+
+
 function add() {
   'use strict';
 
-  function isNum(n) {
-    if (typeof n === 'number') {
-      return true;
-    }
-
-    return false;
-  }
-
-
-  const args = new Array(arguments.length);
-  for (let i = 0, len = arguments.length; i < len; ++i) {
+  const len = arguments.length;
+  const args = Array.apply(null, new Array(len));
+  for (let i = 0; i < len; ++i) {
     args[i] = arguments[i];
   }
 
 
-  if (!args.every(isNum)) {
-    return undefined;
+  if (args.length === 1 && isNum(args[0])) {
+    /* jshint -W014 */
+    return function (y) {
+      const result = args[0] + y;
+
+      return isNum(result) && isNum(y)
+        ? result
+        : undefined;
+    };
   }
 
 
   const result = args[0] + args[1];
-  if (!Number.isNaN(result)) {
-    return result;
-  }
-
-
-  const x = args[0];
-  
-  return function (y) {
-    if (!isNum(y)) {
-      return undefined;
-    }
-
-    return x + y;
-  };
+  return isNum(result)
+    ? result
+    : undefined;
 }
 
 
