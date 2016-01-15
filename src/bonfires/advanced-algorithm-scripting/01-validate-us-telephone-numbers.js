@@ -27,38 +27,10 @@
  */
 
 
-function telephoneCheck(str) {
+function telephoneCheck(phone_num) {
   'use strict';
 
-  const re = [
-    // 555-555-5555
-    /^(?:1\s)?(?:\d{3}-){2}\d{4}$/,
-
-    // (555)555-5555
-    /^1?[(]\d{3}[)]\d{3}-\d{4}$/,
-
-    // (555) 555-5555
-    /^(?:1\s)?[(]\d{3}[)]\s\d{3}-\d{4}$/,
-
-    // 555 555 5555
-    /^(?:[\d]{3}\s){2}\d{4}$/,
-
-    // 5555555555
-    /^[\d]{10}$/,
-
-    //1 555 555 5555
-    /^1\s(?:[\d]{3}\s){2}\d{4}$/
-  ];
-
-
-  for (let i = re.length - 1; i >= 0; --i) {
-    if (re[i].test(str)) {
-      return true;
-    }
-  }
-
-
-  return false;
+  return /^1? ?(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/.test(phone_num);
 }
 
 
