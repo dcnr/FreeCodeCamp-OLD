@@ -17,12 +17,10 @@
 function truncate(str, num) {
   'use strict';
 
-  if (num < str.length) {
-    str = str.slice(0, num <= 3 ? num : num - 3) + '...';
-  }
-
-
-  return str;
+  /* jshint -W014 */
+  return num < str.length
+    ? str.slice(0, num <= 3 ? num : num - 3) + '...'
+    : str;
 }
 
 
