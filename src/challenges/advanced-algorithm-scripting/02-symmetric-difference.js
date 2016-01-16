@@ -10,9 +10,8 @@
 function sym(args) {
   'use strict';
 
-  const len = arguments.length;
-  args = Array.apply(null, new Array(len));
-  for (let i = 0; i < len; ++i) {
+  args = Array.apply(null, new Array(arguments.length));
+  for (let i = 0; i < arguments.length; ++i) {
     args[i] = arguments[i];
   }
 

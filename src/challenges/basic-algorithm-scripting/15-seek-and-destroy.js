@@ -13,9 +13,8 @@
 function destroyer(arr) {
   'use strict';
 
-  const len = arguments.length;
-  const args = Array.call(null, new Array(len));
-  for (let i = 0; i < len; ++i) {
+  const args = Array.apply(null, new Array(arguments.length));
+  for (let i = 0; i < arguments.length; ++i) {
     args[i] = arguments[i];
   }
 
