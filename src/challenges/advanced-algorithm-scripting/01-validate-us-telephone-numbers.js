@@ -30,9 +30,7 @@
 function telephoneCheck(phone_num) {
   'use strict';
 
-  const pattern = new RegExp(
-    /^(?:1 ?)?(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/
-  );
+  const pattern = /^(?:1[- ]?)?(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$/;
 
   return pattern.test(phone_num);
 }
