@@ -18,12 +18,10 @@
 function where(arr, num) {
   'use strict';
 
-  const result = Array.prototype.concat(arr, num)
+  return arr
+    .concat(num)
     .sort((a, b) => a - b)
     .indexOf(num);
-
-
-  return result;
 }
 
 
