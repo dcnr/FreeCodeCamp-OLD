@@ -42,10 +42,9 @@ function where(collection, source) {
     return Object
       .keys(source)
       .every(prop =>
-        obj.hasOwnProperty && obj[prop] === source[prop]
+        obj[prop] === source[prop]
       );
   }
-
 
   return collection.filter(compare);
 }
