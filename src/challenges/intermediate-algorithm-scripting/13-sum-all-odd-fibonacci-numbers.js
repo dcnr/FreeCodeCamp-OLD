@@ -12,20 +12,20 @@
  *
  */
 
-function fib(max, acc) {
+function* fib() {
   'use strict';
 
-  acc = acc || [1, 1];
-  const last = acc.length - 1;
+  let prev = 0;
+  let curr = 1;
 
-  if (acc[last] > max) {
-    acc.pop();
-    return acc;
+  yield curr;
+
+  while (true) {
+    let tmp = prev;
+    prev = curr;
+    curr = tmp + prev;
+    yield curr;
   }
-
-  acc.push(acc[last - 1] + acc[last]);
-
-  return fib(max, acc);
 }
 
 
@@ -36,20 +36,19 @@ function sumFibs(num) {
     return 1;
   }
 
-  if (num < 1) {
-    return 0;
+
+  let result = 0;
+
+  for (let n of fib()) {
+    if (n > num) {
+      break;
+    }
+
+    if (n % 2 === 1) {
+      result = result + n;
+    }
   }
-
-
-  const result = fib(num)
-    .reduce((p, c) => {
-      if (c % 2 !== 0) {
-        return p + c;
-      }
-
-      return p;
-    });
-
+  
 
   return result;
 }
