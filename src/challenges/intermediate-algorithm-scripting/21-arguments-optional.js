@@ -1,3 +1,4 @@
+/* jshint -W014 */
 /* Bonfire: Arguments Optional
  * http://www.freecodecamp.com/challenges/bonfire-arguments-optional
  *
@@ -36,21 +37,16 @@ function add() {
 
 
   if (args.length === 1 && isNum(args[0])) {
-    /* jshint -W014 */
     return function (y) {
       const result = args[0] + y;
 
-      return isNum(result) && isNum(y)
-        ? result
-        : undefined;
+      return isNum(result) ? result : undefined;
     };
   }
 
 
   const result = args[0] + args[1];
-  return isNum(result)
-    ? result
-    : undefined;
+  return isNum(result) ? result : undefined;
 }
 
 
