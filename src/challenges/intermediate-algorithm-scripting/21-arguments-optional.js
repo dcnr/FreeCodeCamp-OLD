@@ -30,7 +30,7 @@ function isNum(v) {
 function sum() {
   'use strict';
 
-  const result = Array.prototype.reduce(arguments, (p, c) => p + c);
+  const result = Array.prototype.reduce.call(arguments, (p, c) => p + c);
 
   return isNum(result) ? result : undefined;
 }
@@ -41,7 +41,7 @@ function add() {
 
   return Array.prototype.every.call(arguments, isNum) &&
     arguments.length === 1
-      ? sum.bind(sum, arguments[0])
+      ? sum.bind(sum, ...arguments)
       : sum(...arguments);
 }
 
