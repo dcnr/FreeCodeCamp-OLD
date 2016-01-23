@@ -27,7 +27,7 @@ function isNum(v) {
 }
 
 
-function add() {
+function sum() {
   'use strict';
 
   const args = Array.apply(null, new Array(arguments.length));
@@ -35,18 +35,19 @@ function add() {
     args[i] = arguments[i];
   }
 
+  const result = args.reduce((p, c) => p + c);
 
-  if (args.length === 1 && isNum(args[0])) {
-    return function (y) {
-      const result = args[0] + y;
-
-      return isNum(result) ? result : undefined;
-    };
-  }
-
-
-  const result = args[0] + args[1];
   return isNum(result) ? result : undefined;
+}
+
+
+function add() {
+  'use strict';
+
+  return Array.prototype.every.call(arguments, isNum) &&
+    arguments.length === 1
+      ? sum.bind(sum, arguments[0])
+      : sum(...arguments);
 }
 
 
