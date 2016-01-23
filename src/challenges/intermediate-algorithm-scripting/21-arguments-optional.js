@@ -30,12 +30,7 @@ function isNum(v) {
 function sum() {
   'use strict';
 
-  const args = Array.apply(null, new Array(arguments.length));
-  for (let i = 0; i < arguments.length; ++i) {
-    args[i] = arguments[i];
-  }
-
-  const result = args.reduce((p, c) => p + c);
+  const result = Array.prototype.reduce(arguments, (p, c) => p + c);
 
   return isNum(result) ? result : undefined;
 }
