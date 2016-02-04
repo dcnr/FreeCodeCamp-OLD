@@ -18,10 +18,7 @@
 function where(arr, num) {
   'use strict';
 
-  return arr
-    .concat(num)
-    .sort((a, b) => a - b)
-    .indexOf(num);
+  return arr.reduce((p, c) => c < num ? p + 1 : p, 0);
 }
 
 
