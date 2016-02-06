@@ -10,16 +10,10 @@
 function drop(arr, func) {
   'use strict';
 
-  let result = [];
-  const index = arr.findIndex(v => func(v));
-
-
-  if (~index) {
-    result = arr.slice(index);
-  }
-
-
-  return result;
+  const index = arr.findIndex(func);
+  return index >= 0
+    ? arr.slice(index)
+    : [];
 }
 
 
