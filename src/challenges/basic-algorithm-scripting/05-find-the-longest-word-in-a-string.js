@@ -12,18 +12,15 @@
 function findLongestWord(str) {
   'use strict';
 
-  const longest_word = str
+  const longest_word_length = str
     .split(' ')
-    .reduce((curr_longest, word) => {
-      if (word.length > curr_longest) {
-        return word.length;
-      }
+    .reduce((curr_longest, word) =>
+      word.length > curr_longest
+        ? word.length
+        : curr_longest
+    , 0);
 
-      return curr_longest;
-    }, 0);
-
-
-  return longest_word;
+  return longest_word_length;
 }
 
 
