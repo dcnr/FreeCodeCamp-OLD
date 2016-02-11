@@ -19,19 +19,11 @@
 function mutation(arr) {
   'use strict';
 
-  const target_len = arr[1].length;
-  const len = arr[1]
-    .toLowerCase()
+  arr = arr.map(word => word.toLowerCase());
+
+  return arr[1]
     .split('')
-    .filter(val =>
-      ~arr[0]
-        .toLowerCase()
-        .indexOf(val)
-    )
-    .length;
-
-
-  return target_len === len;
+    .every(char => ~arr[0].indexOf(char));
 }
 
 
