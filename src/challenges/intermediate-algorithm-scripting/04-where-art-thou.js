@@ -38,15 +38,11 @@
 function where(collection, source) {
   'use strict';
 
-  function compare(obj) {
-    return Object
-      .keys(source)
-      .every(prop =>
-        obj[prop] === source[prop]
-      );
-  }
+  const keys = Object.keys(source);
 
-  return collection.filter(compare);
+  return collection.filter(curr_obj =>
+    keys.every(key => curr_obj[key] === source[key])
+  );
 }
 
 
