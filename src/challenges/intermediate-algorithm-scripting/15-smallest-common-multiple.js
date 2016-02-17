@@ -19,52 +19,38 @@ function smallestCommons(arr) {
 
   /********************* HELPERS ********************/
   function makeRange(a) {
-    let range = [];
+    const min = a[0];
+    const max = a[1];
 
-    for (let step = a[0], max = a[1]; step <= max; ++step) {
-      range.push(step);
-    }
-
+    const range = Array
+      .apply(null, new Array(max))
+      .map((v, i) => i + min);
 
     return range;
   }
 
   function gcd(a, b) {
-    function step(x, y) {
-      return y % x;
+    let t;
+
+    while (b !== 0) {
+      t = b;
+      b = a % b;
+      a = t;
     }
 
-    if (a > b) {
-      let tmp = b;
-      b = a;
-      a = tmp;
-    }
-
-    let r = a;
-    while (true) {
-      if (step(a, b) === 0) {
-        return r;
-      }
-
-      r = step(a, b);
-      b = a;
-      a = r;
-    }
+    return a;
   }
 
   function lcm(a, b) {
     return a / gcd(a, b) * b;
   }
+
   /**************************************************/
 
 
-  arr.sort((a, b) => a - b);
+  const range = makeRange(arr.sort((a, b) => a - b));
 
-  let result = 0;
-  const range = makeRange(arr);
-
-  result = range.reduce((p, c) => lcm(p, c));
-
+  const result = range.reduce((p, c) => lcm(p, c));
 
   return result;
 }
