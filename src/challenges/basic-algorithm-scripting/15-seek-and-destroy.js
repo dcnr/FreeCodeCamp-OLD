@@ -13,11 +13,9 @@
 function destroyer(arr) {
   'use strict';
 
-  const args = Array.apply(null, new Array(arguments.length));
-  for (let i = 0; i < arguments.length; ++i) {
-    args[i] = arguments[i];
-  }
-
+  const args = arguments.length === 1
+    ? [arguments[0]]
+    : Array.apply(null, arguments);
 
   arr = arr.filter(val => !~args.indexOf(val));
 
