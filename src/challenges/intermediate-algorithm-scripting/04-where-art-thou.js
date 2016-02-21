@@ -41,7 +41,9 @@ function where(collection, source) {
   const keys = Object.keys(source);
 
   return collection.filter(curr_obj =>
-    keys.every(key => curr_obj[key] === source[key])
+    keys.every(key =>
+      curr_obj.hasOwnProperty(key) && curr_obj[key] === source[key]
+    )
   );
 }
 
