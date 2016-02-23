@@ -5,62 +5,56 @@
  *
  */
 
+function isArr(v) {
+  'use strict';
+
+  return Array.isArray(v) && v.length;
+}
+
+
+function* strip(v) {
+  'use strict';
+
+  let tmp;
+
+  while (isArr(v)) {
+    tmp = v.shift();
+
+    if (isArr(tmp)) {
+      if (tmp.length === 1 && !isArr(tmp[0])) {
+        yield tmp[0];
+        continue;
+      }
+
+      v = tmp;
+      continue;
+    }
+
+    yield tmp;
+  }
+
+}
+
 
 function steamroller(arr) {
   'use strict';
 
-  const result = [];
+  const result = arr.reduce((acc, v) => {
+    if (isArr(v)) {
+      for (let val of strip(v)) {
+        acc.push(val);
+      }
 
-  /****************** HELPERS ******************/
-  function flatten(r, v) {
-    if (Array.isArray(v)) {
-      r.push(v.toString());
-    }
-    else {
-      r.push(v);
+      return acc;
     }
 
-    return r;
-  }
-
-
-  function parse(v) {
-    if (typeof v !== 'string') {
-      return v;
+    if (Array.isArray(v) && v.length === 0) {
+      return acc;
     }
 
-    if (v.length === 1 && parseInt(v, 10)) {
-      return parseInt(v, 10);
-    }
-
-    return v;
-  }
-
-
-  function separate(value) {
-    if (typeof value !== 'string' || value.length === 1) {
-      result.push(value);
-    }
-    else {
-      value
-        .split(',')
-        .map(v => {
-          return parseInt(v, 10);
-        })
-        .forEach(v => {
-          result.push(v);
-        });
-    }
-  }
-  /*********************************************/
-
-
-  arr = arr
-    .reduce(flatten, [])
-    .filter(v => v)
-    .map(parse)
-    .forEach(separate);
-
+    acc.push(v);
+    return acc;
+  }, []);
 
   return result;
 }
