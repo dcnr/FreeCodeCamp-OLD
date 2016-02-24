@@ -30,15 +30,7 @@ function smallestCommons(arr) {
   }
 
   function gcd(a, b) {
-    let t;
-
-    while (b !== 0) {
-      t = b;
-      b = a % b;
-      a = t;
-    }
-
-    return a;
+    return b === 0 ? a : gcd(b, a % b);
   }
 
   function lcm(a, b) {
@@ -58,3 +50,7 @@ function smallestCommons(arr) {
 
 /* exports */
 module.exports = smallestCommons;
+
+console.log(
+  smallestCommons([5, 1])
+);
