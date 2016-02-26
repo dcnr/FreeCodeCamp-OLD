@@ -16,19 +16,8 @@
 function unite(arr1, arr2, arr3) {
   'use strict';
 
-  const set = Array.prototype.concat(...arguments);
-
-  const result = set.filter((num, index) => {
-    while (~set.indexOf(num, index) && num !== undefined) {
-      const loc = set.indexOf(num, index);
-      delete set[loc];
-    }
-
-    return true;
-  });
-
-
-  return result;
+  return Array.prototype.concat(...arguments)
+    .filter((num, index, set) => set.indexOf(num) === index);
 }
 
 
