@@ -15,10 +15,20 @@
 function largestOfFour(arr) {
   'use strict';
 
-  return arr
-    .map(val =>
-      Math.max.apply(null, val)
-    );
+  const answer = [];
+  let largest = 0;
+
+  for (let i = 0; i < arr.length; ++i) {
+    largest = 0;
+    for (let j = 0; j < arr[i].length; ++j) {
+      if (arr[i][j] >= largest) {
+        largest = arr[i][j];
+      }
+    }
+    answer.push(largest);
+  }
+
+  return answer;
 }
 
 
