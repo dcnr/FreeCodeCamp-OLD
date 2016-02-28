@@ -10,26 +10,17 @@
 function sym(args) {
   'use strict';
 
-  args = Array.apply(null, new Array(arguments.length));
-  for (let i = 0; i < arguments.length; ++i) {
-    args[i] = arguments[i];
+  args = arguments.length === 1 ? [arguments[0]] : Array.apply(null, arguments);
+
+  function diff(a, b) {
+    return a.filter(v => !~b.indexOf(v));
   }
 
-
-  const result = args.reduce((p, c) => {
-    function diff(a, b) {
-      return a.filter(v => !~b.indexOf(v));
-    }
-
-    const r = []
+  return args.reduce((p, c) => {
+    return []
       .concat(diff(p, c), diff(c, p))
       .filter((v, pos, arr) => arr.indexOf(v) === pos);
-
-    return r;
   });
-
-
-  return result;
 }
 
 
