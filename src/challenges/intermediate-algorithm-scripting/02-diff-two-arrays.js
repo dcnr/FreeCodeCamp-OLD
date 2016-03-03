@@ -10,12 +10,11 @@
 function diff(arr1, arr2) {
   'use strict';
 
-  const result = [].concat(
-    arr1.filter(v => !~arr2.indexOf(v)),
-    arr2.filter(v => !~arr1.indexOf(v))
-  );
-
-  return result;
+  return Array.prototype
+    .concat(
+      arr1.filter(v => !~arr2.indexOf(v)),
+      arr2.filter(v => !~arr1.indexOf(v))
+    );
 }
 
 
