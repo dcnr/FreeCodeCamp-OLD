@@ -11,13 +11,10 @@
 function binaryAgent(str) {
   'use strict';
 
-  const sentence = str
+  return str
     .split(' ')
     .map(v => String.fromCharCode(parseInt(v, 2)))
     .join('');
-
-
-  return sentence;
 }
 
 
