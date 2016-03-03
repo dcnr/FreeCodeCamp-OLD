@@ -17,7 +17,7 @@ function sym(args) {
   }
 
   return args.reduce((p, c) => {
-    return []
+    return Array.prototype
       .concat(diff(p, c), diff(c, p))
       .filter((v, pos, arr) => arr.indexOf(v) === pos);
   });
